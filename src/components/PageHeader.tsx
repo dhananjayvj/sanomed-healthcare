@@ -3,23 +3,46 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container, Eyebrow } from "./Section";
 
+const SITE_URL = "https://www.sanomedhealthcare.com";
+
 export function PageHeader({
   eyebrow,
   title,
   description,
   breadcrumb,
+  path,
 }: {
   eyebrow: string;
   title: ReactNode;
   description: ReactNode;
   breadcrumb: string;
+  /** Route of this page, e.g. "/products" — used for breadcrumb structured data. */
+  path: string;
 }) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: breadcrumb,
+        item: `${SITE_URL}${path}`,
+      },
+    ],
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-20 sm:pt-40 sm:pb-24">
       <div className="absolute inset-0 -z-10 bg-grid mask-fade-b" aria-hidden />
       <div
         className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/18 blur-[120px]"
         aria-hidden
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <Container>

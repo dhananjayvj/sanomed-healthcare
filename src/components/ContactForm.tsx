@@ -1,24 +1,58 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
+import { AlertCircle, Loader2, Send } from "lucide-react";
+import { company } from "@/lib/site";
+import { ENQUIRY_KEY } from "./ThankYou";
 import { cn } from "@/lib/utils";
+
+const CONTACT_EMAIL = company.emails.primary;
 
 type Field = "name" | "email" | "company" | "phone" | "interest" | "message";
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field, string>>;
 
 const INTERESTS = [
+  "Drug Development",
   "Specialty Chemical Manufacturing",
   "Healthcare Product Synthesis",
-  "Quality Testing & Analysis",
+  "Quality Assurance & Testing",
   "Contract Manufacturing",
+  "Marketing & Distribution",
   "General Enquiry",
 ];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 const PHONE_RE = /^[+()\d][\d\s\-()]{6,19}$/;
+
+/**
+ * The site is a static export, so there is no server to receive submissions.
+ * Set NEXT_PUBLIC_FORM_ENDPOINT to a form backend (Formspree, Web3Forms,
+ * Getform…) to post enquiries directly from the browser. Until that is
+ * configured the form falls back to composing the enquiry as an email in the
+ * visitor's own mail client — no submission is silently dropped either way.
+ */
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+
+function buildMailto(values: Values) {
+  const subject = `Website enquiry — ${values.company.trim()} (${values.interest})`;
+  const body = [
+    `Name: ${values.name.trim()}`,
+    `Organisation: ${values.company.trim()}`,
+    `Email: ${values.email.trim()}`,
+    `Phone: ${values.phone.trim() || "—"}`,
+    `Area of interest: ${values.interest}`,
+    "",
+    "Requirement:",
+    values.message.trim(),
+  ].join("\n");
+
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    subject,
+  )}&body=${encodeURIComponent(body)}`;
+}
 
 const initialValues: Values = {
   name: "",
@@ -82,9 +116,19 @@ export function ContactForm() {
   const [values, setValues] = useState<Values>(initialValues);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Partial<Record<Field, boolean>>>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const router = useRouter();
+
+  /** Hands the composed enquiry to the thank-you page, then routes there. */
+  const confirm = (mailtoHref?: string) => {
+    try {
+      if (mailtoHref) sessionStorage.setItem(ENQUIRY_KEY, mailtoHref);
+      else sessionStorage.removeItem(ENQUIRY_KEY);
+    } catch {
+      // sessionStorage can throw in private browsing modes — routing still works.
+    }
+    router.push("/thank-you/");
+  };
 
   const setValue = (field: Field, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -128,52 +172,38 @@ export function ContactForm() {
       (event.currentTarget.elements.namedItem("website") as HTMLInputElement | null)
         ?.value ?? "";
 
+    // A filled hidden field means an automated submission — accept it visually
+    // and discard it.
+    if (honeypot) {
+      confirm();
+      return;
+    }
+
+    // No form backend configured: hand the enquiry to the visitor's mail client,
+    // then route to the confirmation page which can reopen it if needed.
+    if (!FORM_ENDPOINT) {
+      const href = buildMailto(values);
+      confirm(href);
+      window.location.href = href;
+      return;
+    }
+
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...values, website: honeypot }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(values),
       });
       if (!response.ok) throw new Error("Request failed");
 
-      setStatus("sent");
       setValues(initialValues);
       setTouched({});
+      confirm();
     } catch {
       setStatus("error");
     }
   };
-
-  if (status === "sent") {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        role="status"
-        className="flex h-full min-h-[28rem] flex-col items-center justify-center rounded-3xl border border-accent-200 bg-accent-50 p-10 text-center"
-      >
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-500 text-white">
-          <CheckCircle2 className="h-7 w-7" aria-hidden />
-        </span>
-        <h3 className="mt-6 text-2xl font-semibold text-navy-950">
-          Enquiry received
-        </h3>
-        <p className="mt-3 max-w-sm text-[0.95rem] leading-relaxed text-navy-700">
-          Thank you for contacting Sanomed Health Care. A member of our team will
-          respond to your enquiry within two working days.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-8 rounded-full border border-accent-300 px-6 py-2.5 text-sm font-semibold text-accent-800 transition-colors hover:bg-accent-100"
-        >
-          Submit another enquiry
-        </button>
-      </motion.div>
-    );
-  }
 
   return (
     <form
@@ -309,7 +339,7 @@ export function ContactForm() {
           >
             <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
             We couldn&apos;t submit your enquiry. Please try again, or email us
-            directly at contact@sanomedhealthcare.com.
+            directly at {CONTACT_EMAIL}.
           </motion.p>
         ) : null}
       </AnimatePresence>

@@ -16,7 +16,7 @@ export function Contact() {
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <Reveal className="space-y-4">
+          <Reveal className="min-w-0 space-y-4">
             <div className="rounded-3xl border border-navy-800 bg-navy-950 p-8">
               <h3 className="text-lg font-semibold text-white">
                 Registered Office
@@ -100,7 +100,7 @@ export function Contact() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="min-w-0">
             <ContactForm />
           </Reveal>
         </div>

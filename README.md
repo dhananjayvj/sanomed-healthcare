@@ -32,7 +32,9 @@ src/
 │  │                      → leadership → compliance → contact
 │  ├─ products/page.tsx   Therapy areas, dosage forms, batch assurances
 │  ├─ careers/page.tsx    Why Sanomed, functions, application route
-│  ├─ api/contact/route.ts  Server-side validated enquiry endpoint
+│  ├─ privacy/page.tsx    Privacy policy
+│  ├─ thank-you/page.tsx  Post-enquiry confirmation
+│  ├─ not-found.tsx       Custom 404 (exported as 404.html)
 │  ├─ sitemap.ts, robots.ts, icon.svg
 │  └─ globals.css         Design tokens: navy / accent / mist palettes
 ├─ components/            Section components + Navbar, Footer, ContactForm
@@ -65,15 +67,34 @@ tokens.
 - All decorative icons and background layers marked `aria-hidden`
 - Full `prefers-reduced-motion` support — reveals and transitions are suppressed
 
+## Static export
+
+The site builds to a fully static `out/` directory (`output: "export"`), which
+is what GitHub Pages serves. `trailingSlash` is on so `/products/` resolves to
+`products/index.html` without a server rewrite, and `not-found.tsx` is emitted
+as `404.html` — the file GitHub Pages serves for unknown paths.
+
+Deploys run automatically from `.github/workflows/deploy.yml` on every push to
+`main`: install → lint → build → publish `out/`.
+
 ## Contact form
 
-`ContactForm` validates on blur and on submit; `POST /api/contact` re-validates
-every rule server-side and rejects with `422` plus per-field messages. A hidden
-honeypot field silently absorbs bot submissions. Enquiries are logged
-server-side until an email provider is wired in — see **DEPLOYMENT.md**.
+`ContactForm` validates on blur and on submit, moves focus to the first invalid
+field, and screens bots with a hidden honeypot. On success it routes to
+`/thank-you/`.
+
+Because a static site has no server, delivery works one of two ways:
+
+- **Default (no configuration):** the form composes the enquiry and hands it to
+  the visitor's own mail client, addressed to `contact@sanomedhealthcare.com`.
+  The thank-you page keeps the composed message recoverable if that fails.
+- **With a form backend:** set the repository variable
+  `NEXT_PUBLIC_FORM_ENDPOINT` (Settings → Secrets and variables → Actions →
+  Variables) to a Formspree/Web3Forms/Getform endpoint and the form posts JSON
+  to it directly. The workflow passes it through at build time.
 
 ## Deployment & DNS
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for the Vercel deployment steps and the
-exact Namecheap A / CNAME / MX / TXT records for
-`sanomedhealthcare.com`.
+Hosted on **GitHub Pages** at `https://www.sanomedhealthcare.com`. See
+[DEPLOYMENT.md](./DEPLOYMENT.md) for the exact Namecheap A / CNAME / MX / TXT
+records and the Pages settings.

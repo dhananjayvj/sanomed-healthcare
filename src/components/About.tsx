@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CalendarDays, Factory, MapPin, ScrollText } from "lucide-react";
 import { addressLines, company } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
@@ -56,11 +57,30 @@ export function About() {
               <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-navy-700/85">
                 The company is classified as a private, non-government entity
                 limited by shares, operating under NIC code 24290 — the
-                manufacture of chemicals and chemical products. Across drug
-                development, formulation and supply, every engagement is
-                structured around the same principle that governs the
-                company&apos;s statutory record: precise documentation,
-                verifiable at every step.
+                manufacture of chemicals and chemical products. Across{" "}
+                <Link
+                  href="/#expertise"
+                  className="font-medium text-accent-700 underline-offset-4 hover:underline"
+                >
+                  drug development, formulation and supply
+                </Link>
+                , every engagement is structured around the same principle that
+                governs the company&apos;s statutory record: precise
+                documentation, verifiable at every step. You can review our{" "}
+                <Link
+                  href="/products"
+                  className="font-medium text-accent-700 underline-offset-4 hover:underline"
+                >
+                  product portfolio
+                </Link>{" "}
+                or the{" "}
+                <Link
+                  href="/#leadership"
+                  className="font-medium text-accent-700 underline-offset-4 hover:underline"
+                >
+                  board responsible for it
+                </Link>
+                .
               </p>
             </Reveal>
 

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import {
+  ArrowRight,
   Beaker,
   ClipboardCheck,
   FlaskConical,
@@ -120,6 +122,30 @@ export function Capabilities() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <p className="mt-10 text-center text-[0.95rem] text-navy-700/85">
+            These capabilities are applied across our{" "}
+            <Link
+              href="/products"
+              className="group inline-flex items-center gap-1 font-medium text-accent-700 underline-offset-4 hover:underline"
+            >
+              product portfolio
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </Link>{" "}
+            — and governed by the{" "}
+            <Link
+              href="/#compliance"
+              className="font-medium text-accent-700 underline-offset-4 hover:underline"
+            >
+              compliance systems
+            </Link>{" "}
+            described below.
+          </p>
+        </Reveal>
 
         {/* Delivery process */}
         <div className="mt-24">

@@ -8,6 +8,7 @@ import { Leadership } from "@/components/Leadership";
 import { Compliance } from "@/components/Compliance";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { StickyCta } from "@/components/StickyCta";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <StickyCta />
     </>
   );
 }

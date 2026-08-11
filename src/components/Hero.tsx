@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
@@ -35,7 +36,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative isolate overflow-hidden bg-navy-950 pt-28 pb-20 sm:pt-40 sm:pb-28"
     >
       {/* Depth: engineering grid + soft emerald bloom */}
       <div className="absolute inset-0 -z-10 bg-grid mask-fade-b" aria-hidden />
@@ -58,54 +59,58 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <motion.h1
-              {...rise(0.08)}
-              className="mt-7 text-[2.6rem] font-semibold leading-[1.08] text-white sm:text-6xl sm:leading-[1.05]"
-            >
-              Precision Chemical &amp;{" "}
-              <span className="text-gradient">Healthcare Manufacturing</span>{" "}
-              Solutions
-            </motion.h1>
-
-            <motion.p
-              {...rise(0.14)}
-              className="mt-6 text-base font-medium text-accent-300 sm:text-lg"
-            >
-              {company.promise}
-            </motion.p>
-
-            <motion.p
-              {...rise(0.18)}
-              className="mt-4 max-w-xl text-lg leading-relaxed text-navy-100/75"
-            >
-              {company.legalName} is a Bengaluru-based pharmaceutical and
-              specialty chemical manufacturer — transforming healthcare through
-              cutting-edge research, rigorous quality standards and disciplined
-              statutory compliance, with full batch traceability behind every
-              product we release.
-            </motion.p>
-
-            <motion.div
-              {...rise(0.24)}
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-navy-950 shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98]"
+            {/* Flex + order so the CTAs sit above the fold on small screens
+                while the DOM keeps its natural reading order. */}
+            <div className="flex flex-col">
+              <motion.h1
+                {...rise(0.08)}
+                className="mt-6 text-[2.3rem] font-semibold leading-[1.08] text-white sm:mt-7 sm:text-6xl sm:leading-[1.05]"
               >
-                Request a Consultation
-                <ArrowRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden
-                />
-              </a>
-              <a
-                href="#capabilities"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                Precision Chemical &amp;{" "}
+                <span className="text-gradient">Healthcare Manufacturing</span>{" "}
+                Solutions
+              </motion.h1>
+
+              <motion.p
+                {...rise(0.14)}
+                className="mt-5 text-base font-medium text-accent-300 sm:mt-6 sm:text-lg"
               >
-                Explore Capabilities
-              </a>
-            </motion.div>
+                {company.promise}
+              </motion.p>
+
+              <motion.p
+                {...rise(0.18)}
+                className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-100/75 sm:order-none sm:mt-4 sm:text-lg"
+              >
+                {company.legalName} is a Bengaluru-based pharmaceutical and
+                specialty chemical manufacturer — transforming healthcare
+                through cutting-edge research, rigorous quality standards and
+                disciplined statutory compliance, with full batch traceability
+                behind every product we release.
+              </motion.p>
+
+              <motion.div
+                {...rise(0.24)}
+                className="mt-7 flex flex-col gap-3 sm:order-none sm:mt-9 sm:flex-row sm:items-center"
+              >
+                <Link
+                  href="/#contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-navy-950 shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98]"
+                >
+                  Request a Consultation
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
+                </Link>
+                <Link
+                  href="/#expertise"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                >
+                  Explore Capabilities
+                </Link>
+              </motion.div>
+            </div>
 
             <motion.dl
               {...rise(0.32)}

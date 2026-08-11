@@ -1,155 +1,154 @@
-# Deployment & DNS (Namecheap)
+# Deployment & DNS (GitHub Pages + Namecheap)
 
-The site is a Next.js 16 app with a server-side API route (`/api/contact`), so it
-needs a Node host — **not** GitHub Pages or any static-only host. Vercel is the
-path of least resistance; Netlify and Cloudflare Workers also work.
+The site is a **static export** (`output: "export"` in `next.config.ts`) served
+by GitHub Pages from the custom domain `www.sanomedhealthcare.com`.
 
 ---
 
-## 1. Deploy
+## 1. How deploys work
 
-```bash
-npx vercel link            # connect this repo to a Vercel project
-npx vercel --prod          # or connect the GitHub repo for auto-deploys on push
+`.github/workflows/deploy.yml` runs on every push to `main`:
+
+```
+checkout → npm ci → eslint → next build (static export to out/) → publish to Pages
 ```
 
-In the Vercel project, add both domains:
+`public/CNAME` pins the custom domain and `public/.nojekyll` stops any Jekyll
+processing of the `_next/` asset directory. Neither needs to be re-added — both
+are committed and copied into `out/` on each build.
 
-- `sanomedhealthcare.com` (apex)
-- `www.sanomedhealthcare.com`
+One-time repository settings:
 
-Set one as primary (recommended: `www`, with the apex redirecting to it) and
-Vercel will issue the TLS certificate automatically once DNS resolves.
+- **Settings → Pages → Build and deployment → Source: GitHub Actions**
+- **Settings → Pages → Custom domain:** `www.sanomedhealthcare.com`
+- Tick **Enforce HTTPS** once the certificate has been issued (a few minutes
+  after DNS resolves)
+
+To deploy manually: **Actions → Deploy to GitHub Pages → Run workflow**.
 
 ---
 
 ## 2. Namecheap DNS records
 
-Namecheap → **Domain List** → *Manage* → **Advanced DNS**.
+Namecheap → **Domain List** → *Manage* → **Advanced DNS**. Set **TTL:
+Automatic** on every record.
 
-Before adding anything: if the domain still has Namecheap's parking or email
-forwarding defaults, delete them. Specifically remove the `URL Redirect`/
-`CNAME` record for `@` and `www` pointing at `parkingpage.namecheap.com`, and
-any `MX` record for `eforward1..5.registrar-servers.com` unless you actually
-intend to keep Namecheap email forwarding. Leaving old MX records in place is
-the single most common cause of mail silently failing.
+**Delete first:** the default parking records — the `CNAME` for `www` and the
+`URL Redirect`/`A` record for `@` pointing at `parkingpage.namecheap.com`. Also
+delete any `MX` record for `eforward1..5.registrar-servers.com` unless you are
+deliberately keeping Namecheap email forwarding; stale MX records are the most
+common cause of mail silently failing.
 
-Set **TTL: Automatic** on every record.
+### 2a. Website — GitHub Pages
 
-### 2a. Website records (hosting on Vercel)
+| Type         | Host  | Value                  |
+| ------------ | ----- | ---------------------- |
+| CNAME Record | `www` | `dhananjayvj.github.io.` |
+| A Record     | `@`   | `185.199.108.153`      |
+| A Record     | `@`   | `185.199.109.153`      |
+| A Record     | `@`   | `185.199.110.153`      |
+| A Record     | `@`   | `185.199.111.153`      |
 
-| Type          | Host  | Value                   | Notes                                   |
-| ------------- | ----- | ----------------------- | --------------------------------------- |
-| A Record      | `@`   | `76.76.21.21`           | Vercel's apex IP                        |
-| CNAME Record  | `www` | `cname.vercel-dns.com.` | Trailing dot is fine; Namecheap strips it |
+The **CNAME on `www`** is the record that serves the site — it must point at the
+GitHub Pages host `dhananjayvj.github.io` (the user domain, not the repository).
+The four **A records on `@`** exist because Namecheap cannot put a CNAME on the
+apex; they let `sanomedhealthcare.com` redirect to `www.sanomedhealthcare.com`.
+All four are GitHub's published Pages IPs — add every one, they are the
+redundant set, not alternatives.
 
-> Confirm both values against what your Vercel project's **Settings → Domains**
-> page displays — Vercel has issued different apex IPs (e.g. `216.198.79.1`) to
-> newer projects, and the dashboard is authoritative for your project.
+Optional IPv6 (add all four alongside the A records if you want AAAA support):
 
-Namecheap cannot put a CNAME on the apex (`@`), which is why the apex uses an A
-record. If you prefer a CNAME-only setup, move the domain's nameservers to
-Cloudflare and use its CNAME flattening.
+| Type         | Host | Value                  |
+| ------------ | ---- | ---------------------- |
+| AAAA Record  | `@`  | `2606:50c0:8000::153`  |
+| AAAA Record  | `@`  | `2606:50c0:8001::153`  |
+| AAAA Record  | `@`  | `2606:50c0:8002::153`  |
+| AAAA Record  | `@`  | `2606:50c0:8003::153`  |
 
-Alternative hosts, for reference:
+### 2b. Email — `contact@` and `info@`
 
-| Host             | Apex (`@`)                    | `www`                          |
-| ---------------- | ----------------------------- | ------------------------------ |
-| Netlify          | A → `75.2.60.5`               | CNAME → `<site>.netlify.app.`  |
-| Cloudflare Pages | (use Cloudflare nameservers)  | CNAME → `<project>.pages.dev.` |
+GitHub Pages does not host email, so mailboxes come from a separate provider.
+Pick **one** set of MX records — never mix providers.
 
-### 2b. Email records (`contact@` and `info@`)
+**Option A — Zoho Mail** (free tier for small teams; India data centre)
 
-MX records depend on which mailbox provider hosts the two addresses. Pick **one**
-set — never mix providers' MX records.
+| Type | Host               | Value                              | Priority |
+| ---- | ------------------ | ---------------------------------- | -------- |
+| MX   | `@`                | `mx.zoho.in`                       | 10       |
+| MX   | `@`                | `mx2.zoho.in`                      | 20       |
+| MX   | `@`                | `mx3.zoho.in`                      | 50       |
+| TXT  | `@`                | `v=spf1 include:zoho.in ~all`      | —        |
+| TXT  | `zmail._domainkey` | *(DKIM value from Zoho console)*   | —        |
 
-**Option A — Zoho Mail** (free tier for a small team; India data centre)
-
-| Type | Host | Value                                   | Priority |
-| ---- | ---- | --------------------------------------- | -------- |
-| MX   | `@`  | `mx.zoho.in`                            | 10       |
-| MX   | `@`  | `mx2.zoho.in`                           | 20       |
-| MX   | `@`  | `mx3.zoho.in`                           | 50       |
-| TXT  | `@`  | `v=spf1 include:zoho.in ~all`           | —        |
-| TXT  | `zmail._domainkey` | *(DKIM value from Zoho console)* | —     |
-
-If your Zoho account sits in the global (`.com`) data centre, use `mx.zoho.com`,
-`mx2.zoho.com`, `mx3.zoho.com` and `include:zoho.com` instead.
+If your Zoho account is in the global (`.com`) data centre, use `mx.zoho.com`,
+`mx2.zoho.com`, `mx3.zoho.com` and `include:zoho.com`.
 
 **Option B — Google Workspace**
 
-| Type | Host | Value                                          | Priority |
-| ---- | ---- | ---------------------------------------------- | -------- |
-| MX   | `@`  | `smtp.google.com`                              | 1        |
-| TXT  | `@`  | `v=spf1 include:_spf.google.com ~all`          | —        |
-| TXT  | `google._domainkey` | *(DKIM value from Admin console)*  | —        |
+| Type | Host                | Value                                 | Priority |
+| ---- | ------------------- | ------------------------------------- | -------- |
+| MX   | `@`                 | `smtp.google.com`                     | 1        |
+| TXT  | `@`                 | `v=spf1 include:_spf.google.com ~all` | —        |
+| TXT  | `google._domainkey` | *(DKIM value from Admin console)*     | —        |
 
-**Option C — Namecheap Private Email** (simplest if bought with the domain)
+**Option C — Namecheap Private Email**
 
-| Type  | Host           | Value                                  | Priority |
-| ----- | -------------- | -------------------------------------- | -------- |
-| MX    | `@`            | `mx1.privateemail.com`                 | 10       |
-| MX    | `@`            | `mx2.privateemail.com`                 | 10       |
-| CNAME | `mail`         | `privateemail.com.`                    | —        |
-| CNAME | `autodiscover` | `privateemail.com.`                    | —        |
-| CNAME | `autoconfig`   | `privateemail.com.`                    | —        |
-| TXT   | `@`            | `v=spf1 include:spf.privateemail.com ~all` | —    |
+| Type  | Host           | Value                                      | Priority |
+| ----- | -------------- | ------------------------------------------ | -------- |
+| MX    | `@`            | `mx1.privateemail.com`                     | 10       |
+| MX    | `@`            | `mx2.privateemail.com`                     | 10       |
+| CNAME | `mail`         | `privateemail.com.`                        | —        |
+| CNAME | `autodiscover` | `privateemail.com.`                        | —        |
+| CNAME | `autoconfig`   | `privateemail.com.`                        | —        |
+| TXT   | `@`            | `v=spf1 include:spf.privateemail.com ~all` | —        |
 
 **Option D — Microsoft 365**
 
-| Type  | Host           | Value                                            | Priority |
-| ----- | -------------- | ------------------------------------------------ | -------- |
-| MX    | `@`            | `sanomedhealthcare-com.mail.protection.outlook.com` | 0     |
-| CNAME | `autodiscover` | `autodiscover.outlook.com.`                      | —        |
-| TXT   | `@`            | `v=spf1 include:spf.protection.outlook.com -all` | —        |
+| Type  | Host           | Value                                               | Priority |
+| ----- | -------------- | --------------------------------------------------- | -------- |
+| MX    | `@`            | `sanomedhealthcare-com.mail.protection.outlook.com` | 0        |
+| CNAME | `autodiscover` | `autodiscover.outlook.com.`                         | —        |
+| TXT   | `@`            | `v=spf1 include:spf.protection.outlook.com -all`    | —        |
 
-### 2c. Recommended for deliverability (any provider)
+### 2c. Deliverability (any provider)
 
-| Type | Host      | Value                                                                  |
-| ---- | --------- | ---------------------------------------------------------------------- |
-| TXT  | `_dmarc`  | `v=DMARC1; p=quarantine; rua=mailto:contact@sanomedhealthcare.com; fo=1` |
+| Type | Host     | Value                                                                   |
+| ---- | -------- | ----------------------------------------------------------------------- |
+| TXT  | `_dmarc` | `v=DMARC1; p=quarantine; rua=mailto:contact@sanomedhealthcare.com; fo=1` |
 
-Only one SPF (`v=spf1 …`) TXT record may exist on `@`. If you later send
-transactional mail from the contact form via a provider (see below), merge its
-include into that single record rather than adding a second one — e.g.
-`v=spf1 include:zoho.in include:_spf.resend.com ~all`.
+Only one SPF (`v=spf1 …`) TXT record may exist on `@`. If you later add a form
+backend that sends mail, merge its include into that single record rather than
+adding a second — e.g. `v=spf1 include:zoho.in include:_spf.resend.com ~all`.
 
-### 2d. Verification
+### 2d. Verify
 
 ```bash
-dig +short sanomedhealthcare.com A
-dig +short www.sanomedhealthcare.com CNAME
-dig +short sanomedhealthcare.com MX
-dig +short sanomedhealthcare.com TXT
+dig +short www.sanomedhealthcare.com CNAME   # → dhananjayvj.github.io.
+dig +short sanomedhealthcare.com A           # → the four 185.199.x.153 IPs
+dig +short sanomedhealthcare.com MX          # → your chosen provider
+curl -sI https://www.sanomedhealthcare.com | head -1
 ```
 
-Namecheap propagation is usually minutes, but allow up to 24–48 hours before
-concluding something is wrong.
+Namecheap usually propagates within minutes; allow up to 24–48 hours before
+concluding something is wrong. GitHub re-checks the domain automatically and
+issues the TLS certificate once the CNAME resolves.
 
 ---
 
-## 3. Wiring the contact form to real email
+## 3. Contact form delivery
 
-`src/app/api/contact/route.ts` validates every submission server-side and
-currently logs the enquiry. To deliver it, add a provider at the marked `TODO`:
+The static site has no server, so by default the enquiry form composes the
+message in the visitor's own mail client, addressed to
+`contact@sanomedhealthcare.com`.
 
-```bash
-npm install resend
-```
+To capture submissions server-side instead, create a form endpoint (Formspree,
+Web3Forms, Getform — all have free tiers) and add it as a repository variable:
 
-```ts
-import { Resend } from "resend";
-const resend = new Resend(process.env.RESEND_API_KEY);
+**Settings → Secrets and variables → Actions → Variables → New variable**
 
-await resend.emails.send({
-  from: "website@sanomedhealthcare.com",
-  to: ["contact@sanomedhealthcare.com"],
-  replyTo: enquiry.email,
-  subject: `Website enquiry — ${enquiry.company}`,
-  text: JSON.stringify(enquiry, null, 2),
-});
-```
+| Name                        | Value                                     |
+| --------------------------- | ----------------------------------------- |
+| `NEXT_PUBLIC_FORM_ENDPOINT` | `https://formspree.io/f/<your-form-id>`   |
 
-Set `RESEND_API_KEY` in Vercel → Settings → Environment Variables, and add the
-provider's verification records (they will supply a DKIM CNAME and an SPF
-include) alongside the records above.
+Push (or re-run the workflow) and the form will POST enquiries as JSON to that
+endpoint, then route the visitor to `/thank-you/`. No code change is required.

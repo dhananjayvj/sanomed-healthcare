@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Pill, ShieldCheck } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StickyCta } from "@/components/StickyCta";
 import { PageHeader } from "@/components/PageHeader";
 import { Container, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -13,6 +14,24 @@ export const metadata: Metadata = {
   description:
     "An extensive and diverse portfolio of pharmaceutical products from Sanomed Health Care — chronic and acute treatments across cardiovascular, anti-infective, analgesic, gastrointestinal, nutraceutical and dermatology therapy areas.",
 };
+
+const RELATED_LINKS = [
+  {
+    href: "/#expertise",
+    title: "Areas of Expertise",
+    copy: "The six disciplines behind everything in this portfolio.",
+  },
+  {
+    href: "/#compliance",
+    title: "Compliance",
+    copy: "The regulatory and governance systems every batch passes through.",
+  },
+  {
+    href: "/careers",
+    title: "Careers",
+    copy: "Join the team that develops and manufactures these products.",
+  },
+];
 
 const assurances = [
   "Manufactured under documented quality systems",
@@ -27,6 +46,7 @@ export default function ProductsPage() {
       <Navbar />
       <main className="flex-1">
         <PageHeader
+          path="/products"
           breadcrumb="Products"
           eyebrow="Our Portfolio"
           title="An extensive and diverse range of medicines"
@@ -147,8 +167,38 @@ export default function ProductsPage() {
             </p>
           </Container>
         </section>
+
+        <section className="border-t border-mist-300 bg-white py-16">
+          <Container>
+            <h2 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent-700">
+              Continue exploring
+            </h2>
+            <ul className="mt-7 grid gap-4 sm:grid-cols-3">
+              {RELATED_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group flex h-full flex-col rounded-2xl border border-mist-300 bg-mist-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
+                  >
+                    <span className="flex items-center justify-between gap-3 text-base font-semibold text-navy-950">
+                      {item.title}
+                      <ArrowRight
+                        className="h-4 w-4 shrink-0 text-accent-600 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden
+                      />
+                    </span>
+                    <span className="mt-2 text-sm leading-relaxed text-navy-700/85">
+                      {item.copy}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
       </main>
       <Footer />
+      <StickyCta />
     </>
   );
 }

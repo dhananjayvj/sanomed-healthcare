@@ -18,7 +18,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-navy-950">
-      <Container className="py-16 sm:py-20">
+      <Container className="pt-16 pb-28 sm:pt-20 sm:pb-24 lg:pb-20">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_0.8fr_1fr]">
           <div>
             <Wordmark />
@@ -90,7 +90,7 @@ export function Footer() {
               </address>
             </div>
 
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex min-w-0 gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-navy-100/45" aria-hidden />
               <div className="min-w-0">
                 <a
@@ -118,9 +118,17 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-navy-100/50">
-            © {year} {company.legalName}. All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <p className="text-xs text-navy-100/50">
+              © {year} {company.legalName}. All rights reserved.
+            </p>
+            <Link
+              href="/privacy"
+              className="text-xs text-navy-100/60 underline-offset-4 transition-colors hover:text-white hover:underline"
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <p className="text-xs text-navy-100/40">
             {company.classification} · {company.activity}
           </p>

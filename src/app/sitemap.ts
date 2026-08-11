@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Emitted as a static file at build time for the static export.
+export const dynamic = "force-static";
+
 const siteUrl = "https://www.sanomedhealthcare.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/privacy`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }

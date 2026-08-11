@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Leaf, Recycle, ScrollText, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
 import { Container, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
@@ -82,6 +83,19 @@ export function Compliance() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <p className="mt-8 text-center text-[0.95rem] text-navy-700/85">
+            The same discipline governs the information you send us — see our{" "}
+            <Link
+              href="/privacy"
+              className="font-medium text-accent-700 underline-offset-4 hover:underline"
+            >
+              privacy policy
+            </Link>
+            .
+          </p>
+        </Reveal>
 
         <Reveal delay={0.12}>
           <div className="mt-8 overflow-hidden rounded-3xl border border-navy-800 bg-navy-950 p-9 sm:p-11">
