@@ -24,6 +24,12 @@ export const company = {
     primary: "contact@sanomedhealthcare.com",
     secondary: "info@sanomedhealthcare.com",
   },
+  phone: {
+    display: "+91 93803 30849",
+    /** E.164 form for tel: links and structured data. */
+    href: "+919380330849",
+  },
+  hours: "Monday – Saturday · 9:30 AM – 6:30 PM IST",
 } as const;
 
 export const addressLines = [
@@ -70,6 +76,21 @@ export const coreValues = [
   {
     title: "Sustainability",
     copy: "Responsible manufacturing that conserves resources and minimises environmental impact.",
+  },
+] as const;
+
+export const governancePillars = [
+  {
+    title: "Board Accountability",
+    copy: "Two directors with complementary, explicitly divided mandates — so neither quality nor governance depends on a single point of judgement.",
+  },
+  {
+    title: "Quality Ownership",
+    copy: "Quality outcomes sit with the board, not only the plant floor: specifications, deviations and release decisions escalate to director level.",
+  },
+  {
+    title: "Measured Growth",
+    copy: "Capacity is added against demonstrated demand and proven capability, keeping expansion within what our quality systems can absorb.",
   },
 ] as const;
 

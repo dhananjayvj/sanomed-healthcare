@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { addressLines, company, navLinks } from "@/lib/site";
 import { Wordmark } from "./Logo";
 import { Container } from "./Section";
@@ -23,9 +23,7 @@ export function Footer() {
           <div>
             <Wordmark />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-navy-100/65">
-              {company.legalName} — a private limited company registered with the
-              Registrar of Companies, Bengaluru, manufacturing specialty
-              chemicals and healthcare products under documented quality systems.
+              {company.promise}
             </p>
             <dl className="mt-7 space-y-2 text-sm">
               <div className="flex gap-2">
@@ -91,21 +89,23 @@ export function Footer() {
             </div>
 
             <div className="mt-6 flex min-w-0 gap-3">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-navy-100/45" aria-hidden />
+              <a
+                href={`tel:${company.phone.href}`}
+                className="text-sm font-medium text-navy-100/85 underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
+              >
+                {company.phone.display}
+              </a>
+            </div>
+
+            <div className="mt-4 flex min-w-0 gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-navy-100/45" aria-hidden />
-              <div className="min-w-0">
-                <a
-                  href={`mailto:${company.emails.primary}`}
-                  className="block truncate text-sm text-navy-100/80 underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
-                >
-                  {company.emails.primary}
-                </a>
-                <a
-                  href={`mailto:${company.emails.secondary}`}
-                  className="mt-1.5 block truncate text-sm text-navy-100/80 underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
-                >
-                  {company.emails.secondary}
-                </a>
-              </div>
+              <a
+                href={`mailto:${company.emails.primary}`}
+                className="min-w-0 truncate text-sm text-navy-100/80 underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
+              >
+                {company.emails.primary}
+              </a>
             </div>
 
             <Link

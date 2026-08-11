@@ -1,25 +1,10 @@
 import { Gavel, LineChart, ShieldCheck } from "lucide-react";
-import { leadership } from "@/lib/site";
+import { governancePillars, leadership } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
 
-const governancePillars = [
-  {
-    icon: Gavel,
-    title: "Statutory Compliance",
-    copy: "Annual filings, board resolutions and registry disclosures maintained on schedule with the Registrar of Companies, Bengaluru.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality Management",
-    copy: "Documented SOPs, batch records and in-process controls governing every production run from raw material intake to release.",
-  },
-  {
-    icon: LineChart,
-    title: "Sustainable Growth",
-    copy: "Capacity and capability expansion planned against demonstrated demand — disciplined investment over speculative scale.",
-  },
-];
+/** Positional icons for the board pillars defined in site.ts. */
+const pillarIcons = [Gavel, ShieldCheck, LineChart];
 
 export function Leadership() {
   return (
@@ -76,19 +61,22 @@ export function Leadership() {
         </div>
 
         <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {governancePillars.map(({ icon: Icon, title, copy }, index) => (
-            <Reveal key={title} delay={0.15 + index * 0.08}>
-              <div className="h-full rounded-2xl border border-white/10 bg-navy-900/40 p-7">
-                <Icon className="h-5 w-5 text-accent-400" aria-hidden />
-                <h4 className="mt-4 text-base font-semibold text-white">
-                  {title}
-                </h4>
-                <p className="mt-2.5 text-sm leading-relaxed text-navy-100/65">
-                  {copy}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+          {governancePillars.map(({ title, copy }, index) => {
+            const Icon = pillarIcons[index];
+            return (
+              <Reveal key={title} delay={0.15 + index * 0.08}>
+                <div className="h-full rounded-2xl border border-white/10 bg-navy-900/40 p-7">
+                  <Icon className="h-5 w-5 text-accent-400" aria-hidden />
+                  <h4 className="mt-4 text-base font-semibold text-white">
+                    {title}
+                  </h4>
+                  <p className="mt-2.5 text-sm leading-relaxed text-navy-100/65">
+                    {copy}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>

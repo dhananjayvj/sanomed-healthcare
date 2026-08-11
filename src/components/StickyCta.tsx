@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { company } from "@/lib/site";
 
 /**
@@ -60,11 +60,11 @@ export function StickyCta() {
         >
           <div className="flex items-center gap-3">
             <a
-              href={`mailto:${company.emails.primary}`}
-              aria-label={`Email ${company.emails.primary}`}
+              href={`tel:${company.phone.href}`}
+              aria-label={`Call ${company.phone.display}`}
               className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
             >
-              <Mail className="h-5 w-5" aria-hidden />
+              <Phone className="h-5 w-5" aria-hidden />
             </a>
             <Link
               href="/#contact"

@@ -1,37 +1,19 @@
 import Link from "next/link";
-import { CalendarDays, Factory, MapPin, ScrollText } from "lucide-react";
-import { addressLines, company } from "@/lib/site";
+import { Quote } from "lucide-react";
+import { company } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
 
-const registryFacts = [
-  {
-    icon: ScrollText,
-    label: "Corporate Identity Number",
-    value: company.cin,
-  },
-  {
-    icon: CalendarDays,
-    label: "Date of Incorporation",
-    value: `${company.incorporated} · ${company.registrar}`,
-  },
-  {
-    icon: Factory,
-    label: "Industry Classification",
-    value: company.activity,
-  },
-  {
-    icon: MapPin,
-    label: "Registered Office",
-    value: `${company.address.line2}, ${company.address.city} ${company.address.pincode}`,
-  },
-];
-
+/**
+ * Corporate profile. Registry values are displayed once, in the hero card;
+ * the address lives in the contact section and footer. This section carries
+ * the narrative only, and links out to the rest.
+ */
 export function About() {
   return (
     <section id="about" className="relative bg-mist-50 py-24 sm:py-32">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
           <div>
             <SectionHeading
               eyebrow="About Us"
@@ -83,64 +65,20 @@ export function About() {
                 .
               </p>
             </Reveal>
-
-            <Reveal delay={0.16}>
-              <div className="mt-9 rounded-2xl border border-mist-300 bg-white p-6 shadow-elevate">
-                <div className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-950 text-accent-300">
-                    <MapPin className="h-5 w-5" aria-hidden />
-                  </span>
-                  <div>
-                    <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
-                      Registered &amp; Operating Address
-                    </p>
-                    <address className="mt-2 text-[0.95rem] not-italic leading-relaxed text-navy-900">
-                      {addressLines.map((line) => (
-                        <span key={line} className="block">
-                          {line}
-                        </span>
-                      ))}
-                    </address>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
           </div>
 
-          <Reveal delay={0.08} className="lg:pt-16">
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {registryFacts.map(({ icon: Icon, label, value }) => (
-                <li
-                  key={label}
-                  className="group rounded-2xl border border-mist-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:shadow-elevate"
-                >
-                  <Icon
-                    className="h-5 w-5 text-accent-600 transition-transform duration-300 group-hover:scale-110"
-                    aria-hidden
-                  />
-                  <p className="mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-navy-500">
-                    {label}
-                  </p>
-                  <p className="mt-2 text-[0.95rem] font-medium leading-snug text-navy-950">
-                    {value}
-                  </p>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-4 overflow-hidden rounded-2xl border border-navy-800 bg-navy-950 p-7">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent-300">
-                Operating Principle
-              </p>
-              <p className="mt-4 text-lg font-medium leading-snug text-white">
-                &ldquo;If it isn&apos;t documented, it didn&apos;t happen. Every
-                batch, every specification, every release — recorded, reviewed
-                and retrievable.&rdquo;
-              </p>
-              <p className="mt-4 text-sm text-navy-100/60">
+          <Reveal delay={0.08}>
+            <figure className="overflow-hidden rounded-3xl border border-navy-800 bg-navy-950 p-9 sm:p-10">
+              <Quote className="h-7 w-7 text-accent-400" aria-hidden />
+              <blockquote className="mt-6 text-xl font-medium leading-snug text-white sm:text-2xl">
+                If it isn&apos;t documented, it didn&apos;t happen. Every batch,
+                every specification, every release — recorded, reviewed and
+                retrievable.
+              </blockquote>
+              <figcaption className="mt-7 border-t border-white/10 pt-6 text-sm text-navy-100/60">
                 Quality doctrine, {company.shortName}
-              </p>
-            </div>
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </Container>

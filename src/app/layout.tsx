@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${company.shortName} — ${company.tagline}`,
     description:
-      "Pharmaceutical and specialty chemical manufacturing under documented quality systems.",
+      "Drug development, contract manufacturing and quality assurance from a registered facility in Bengaluru, India.",
   },
   robots: { index: true, follow: true },
 };
@@ -62,6 +62,7 @@ const organizationSchema = {
   foundingDate: company.incorporated,
   identifier: company.cin,
   email: company.emails.primary,
+  telephone: company.phone.href,
   address: {
     "@type": "PostalAddress",
     streetAddress: `${company.address.line1}, ${company.address.line2}`,
@@ -72,8 +73,9 @@ const organizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    contactType: "customer support",
+    contactType: "sales",
     email: company.emails.primary,
+    telephone: company.phone.href,
     areaServed: "IN",
     availableLanguage: ["en"],
   },

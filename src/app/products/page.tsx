@@ -141,7 +141,7 @@ export default function ProductsPage() {
                   <p className="mt-2 max-w-xl text-[0.95rem] leading-relaxed text-navy-700/85">
                     Share your requirement and our team will confirm
                     availability, indicative timelines and the technical
-                    position — usually within two working days.
+                    position for your specification.
                   </p>
                 </div>
                 <Link

@@ -4,6 +4,10 @@ import { dosageForms, therapyAreas } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
 
+/**
+ * Home-page teaser only. Therapy-area descriptions live solely on /products —
+ * this section lists the coverage and routes there rather than repeating it.
+ */
 export function ProductsPreview() {
   return (
     <section id="products" className="relative bg-white py-24 sm:py-32">
@@ -12,7 +16,7 @@ export function ProductsPreview() {
           <SectionHeading
             eyebrow="Products"
             title="An extensive and diverse range of medicines"
-            description="Our portfolio spans chronic and acute treatments across multiple therapy areas — reflecting a commitment to meeting varied healthcare needs from a single manufacturing base."
+            description="Our portfolio spans chronic and acute treatments across six therapy areas — reflecting a commitment to meeting varied healthcare needs from a single manufacturing base."
           />
           <Reveal delay={0.1}>
             <Link
@@ -28,42 +32,56 @@ export function ProductsPreview() {
           </Reveal>
         </div>
 
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {therapyAreas.map((area, index) => (
-            <Reveal key={area.name} delay={index * 0.06} as="li">
-              <div className="group h-full rounded-2xl border border-mist-300 bg-mist-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:shadow-elevate">
-                <div className="flex items-start justify-between gap-3">
-                  <Pill className="h-5 w-5 text-accent-600" aria-hidden />
-                  <span className="rounded-full bg-navy-950 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-accent-300">
-                    {area.type}
-                  </span>
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-navy-950">
-                  {area.name}
+        <Reveal delay={0.08}>
+          <div className="mt-12 grid gap-8 rounded-3xl border border-mist-300 bg-mist-50 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <div className="flex items-center gap-2.5">
+                <Pill className="h-4.5 w-4.5 text-accent-600" aria-hidden />
+                <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
+                  Therapy Areas
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-navy-700/85">
-                  {area.copy}
-                </p>
               </div>
-            </Reveal>
-          ))}
-        </ul>
+              <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                {therapyAreas.map((area) => (
+                  <li
+                    key={area.name}
+                    className="flex items-baseline gap-2.5 text-[0.95rem] font-medium text-navy-900"
+                  >
+                    <span
+                      className="h-1.5 w-1.5 shrink-0 translate-y-[-0.15rem] rounded-full bg-accent-500"
+                      aria-hidden
+                    />
+                    {area.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <Reveal delay={0.15}>
-          <div className="mt-8 rounded-2xl border border-mist-300 bg-mist-50 p-7">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
-              Dosage Forms Supported
-            </p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {dosageForms.map((form) => (
-                <li
-                  key={form}
-                  className="rounded-full border border-mist-300 bg-white px-3.5 py-1.5 text-sm font-medium text-navy-800"
+            <div className="border-t border-mist-300 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
+              <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
+                Dosage Forms
+              </h3>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {dosageForms.map((form) => (
+                  <li
+                    key={form}
+                    className="rounded-full border border-mist-300 bg-white px-3.5 py-1.5 text-sm font-medium text-navy-800"
+                  >
+                    {form}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-7 text-sm leading-relaxed text-navy-700/85">
+                Each area is detailed on the{" "}
+                <Link
+                  href="/products"
+                  className="font-medium text-accent-700 underline-offset-4 hover:underline"
                 >
-                  {form}
-                </li>
-              ))}
-            </ul>
+                  products page
+                </Link>
+                , along with the documentation issued against every batch.
+              </p>
+            </div>
           </div>
         </Reveal>
       </Container>

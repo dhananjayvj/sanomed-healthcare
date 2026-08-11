@@ -19,19 +19,24 @@ export function Contact() {
           <Reveal className="min-w-0 space-y-4">
             <div className="rounded-3xl border border-navy-800 bg-navy-950 p-8">
               <h3 className="text-lg font-semibold text-white">
-                Registered Office
+                Talk to us directly
               </h3>
-              <div className="mt-6 flex items-start gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/8 text-accent-300">
-                  <MapPin className="h-4.5 w-4.5" aria-hidden />
+
+              <div className="mt-7 flex items-start gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-500 text-navy-950">
+                  <Phone className="h-4.5 w-4.5" aria-hidden />
                 </span>
-                <address className="text-[0.95rem] not-italic leading-relaxed text-navy-100/80">
-                  {addressLines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </address>
+                <div className="min-w-0">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-navy-100/45">
+                    Phone
+                  </p>
+                  <a
+                    href={`tel:${company.phone.href}`}
+                    className="mt-1.5 block text-lg font-semibold text-white underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
+                  >
+                    {company.phone.display}
+                  </a>
+                </div>
               </div>
 
               <div className="mt-6 border-t border-white/10 pt-6">
@@ -49,12 +54,6 @@ export function Contact() {
                     >
                       {company.emails.primary}
                     </a>
-                    <a
-                      href={`mailto:${company.emails.secondary}`}
-                      className="mt-1 block truncate text-[0.95rem] text-navy-100/75 underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
-                    >
-                      {company.emails.secondary}
-                    </a>
                   </div>
                 </div>
               </div>
@@ -62,40 +61,34 @@ export function Contact() {
               <div className="mt-6 border-t border-white/10 pt-6">
                 <div className="flex items-start gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/8 text-accent-300">
-                    <Clock className="h-4.5 w-4.5" aria-hidden />
+                    <MapPin className="h-4.5 w-4.5" aria-hidden />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-navy-100/45">
-                      Business Hours
+                      Registered Office
                     </p>
-                    <p className="mt-1.5 text-[0.95rem] text-white">
-                      Monday – Saturday · 9:30 AM – 6:30 PM IST
-                    </p>
+                    <address className="mt-1.5 text-[0.95rem] not-italic leading-relaxed text-navy-100/80">
+                      {addressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-mist-300 bg-white p-6">
-              <div className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4.5 w-4.5 shrink-0 text-accent-600" aria-hidden />
-                <p className="text-sm leading-relaxed text-navy-700">
-                  For procurement and contract manufacturing discussions, please
-                  include indicative volumes and timelines in your enquiry — it
-                  lets us reply with specifics on the first response.
-                </p>
+              <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-6">
+                <Clock className="h-4 w-4 shrink-0 text-accent-400" aria-hidden />
+                <p className="text-sm text-navy-100/70">{company.hours}</p>
               </div>
             </div>
 
             <div className="rounded-2xl border border-mist-300 bg-white p-6">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
-                Corporate Identity Number
-              </p>
-              <p className="mt-2 font-mono text-sm font-medium tracking-tight text-navy-950">
-                {company.cin}
-              </p>
-              <p className="mt-2 text-xs text-navy-500">
-                {company.classification}
+              <p className="text-sm leading-relaxed text-navy-700">
+                For procurement and contract manufacturing discussions, please
+                include indicative volumes and timelines in your enquiry — it
+                lets us reply with specifics on the first response.
               </p>
             </div>
           </Reveal>

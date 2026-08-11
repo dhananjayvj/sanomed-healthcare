@@ -35,8 +35,8 @@ const capabilities = [
   {
     icon: Microscope,
     title: "Quality Assurance & Testing",
-    copy: "Stringent in-process and finished-goods testing against defined acceptance criteria — safeguarding patient safety and product integrity at every stage of our operations.",
-    points: ["In-process checks", "COA issuance", "Retention samples"],
+    copy: "Stringent testing against defined acceptance criteria at every stage, safeguarding patient safety and product integrity before a batch is cleared to move on.",
+    points: ["Method validation", "Stability studies", "Release testing"],
   },
   {
     icon: Workflow,

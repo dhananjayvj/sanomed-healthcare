@@ -7,7 +7,7 @@ import {
   BadgeCheck,
   Building2,
   FlaskConical,
-  ShieldCheck,
+  MapPin,
 } from "lucide-react";
 import { company } from "@/lib/site";
 import { Container } from "./Section";
@@ -15,13 +15,11 @@ import { Container } from "./Section";
 const trustIndicators = [
   { icon: BadgeCheck, label: "Incorporated", value: company.incorporated },
   { icon: Building2, label: "Registered", value: "MCA / ROC Bengaluru" },
-  { icon: ShieldCheck, label: "CIN", value: company.cin },
-];
-
-const stats = [
-  { value: "24290", label: "NIC manufacturing class" },
-  { value: "100%", label: "Batch-level traceability" },
-  { value: "ROC", label: "Bengaluru jurisdiction" },
+  {
+    icon: MapPin,
+    label: "Operating from",
+    value: `${company.address.city}, ${company.address.state}`,
+  },
 ];
 
 export function Hero() {
@@ -178,21 +176,6 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-3">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-center"
-                >
-                  <p className="text-lg font-semibold text-accent-300">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-[0.68rem] leading-tight text-navy-100/55">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </Container>
