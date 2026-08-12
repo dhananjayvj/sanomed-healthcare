@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { addressLines, company, navLinks } from "@/lib/site";
+import { addressLines, company, contactEmails, navLinks } from "@/lib/site";
 import { Wordmark } from "./Logo";
 import { Container } from "./Section";
 
@@ -73,14 +73,19 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="mt-4 flex min-w-0 gap-3">
+            <div className="mt-4 flex min-w-0 items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-navy-500" aria-hidden />
-              <a
-                href={`mailto:${company.emails.primary}`}
-                className="min-w-0 truncate text-sm text-navy-800 underline-offset-4 transition-colors hover:text-accent-700 hover:underline"
-              >
-                {company.emails.primary}
-              </a>
+              <div className="min-w-0 space-y-1.5">
+                {contactEmails.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="block break-all text-sm text-navy-800 underline-offset-4 transition-transform hover:translate-x-0.5 hover:text-accent-700 hover:underline"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </div>
             </div>
 
             <Link

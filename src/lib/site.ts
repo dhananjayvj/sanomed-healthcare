@@ -23,6 +23,7 @@ export const company = {
   emails: {
     primary: "contact@sanomedhealthcare.com",
     secondary: "info@sanomedhealthcare.com",
+    admin: "admin@sanomedhealthcare.com",
   },
   phone: {
     display: "+91 93803 30849",
@@ -31,6 +32,8 @@ export const company = {
   },
   hours: "Monday – Saturday · 9:30 AM – 6:30 PM IST",
 } as const;
+
+export const contactEmails = Object.values(company.emails);
 
 export const addressLines = [
   company.address.line1,

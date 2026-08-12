@@ -1,5 +1,5 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { addressLines, company } from "@/lib/site";
+import { addressLines, company, contactEmails } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
 import { ContactForm } from "./ContactForm";
 import { Reveal } from "./Reveal";
@@ -17,7 +17,7 @@ export function Contact() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal className="min-w-0 space-y-4">
-            <div className="rounded-3xl border border-navy-800 bg-navy-950 p-8">
+            <div className="rounded-3xl border border-navy-800 bg-navy-950 p-5 sm:p-8">
               <h3 className="text-lg font-semibold text-white">
                 Talk to us directly
               </h3>
@@ -48,12 +48,17 @@ export function Contact() {
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-navy-100/45">
                       Email
                     </p>
-                    <a
-                      href={`mailto:${company.emails.primary}`}
-                      className="mt-1.5 block truncate text-[0.95rem] text-white underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
-                    >
-                      {company.emails.primary}
-                    </a>
+                    <div className="mt-1.5 space-y-1.5">
+                      {contactEmails.map((email) => (
+                        <a
+                          key={email}
+                          href={`mailto:${email}`}
+                          className="block break-all text-sm text-white underline-offset-4 transition-transform hover:translate-x-1 hover:text-accent-300 hover:underline sm:text-[0.95rem]"
+                        >
+                          {email}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
