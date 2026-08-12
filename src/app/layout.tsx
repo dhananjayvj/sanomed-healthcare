@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.shortName}`,
   },
   description:
-    "Sanomed Health Care Private Limited is a Bengaluru-based pharmaceutical and specialty chemical company — drug development, formulation, quality assurance and supply, with production delivered through trusted contract manufacturing partners under documented quality systems.",
+    "We are a Bengaluru-based pharmaceutical and specialty chemical company — drug development, formulation, quality assurance and supply, with production delivered through trusted contract manufacturing partners under documented quality systems.",
   keywords: [
     "pharmaceutical company Bangalore",
     "specialty chemical solutions",

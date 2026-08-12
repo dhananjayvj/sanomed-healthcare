@@ -32,7 +32,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-accent-200/70 bg-linear-to-r from-white via-mist-50 to-accent-100/90 shadow-elevate backdrop-blur-xl"
+          ? "border-b border-accent-300/60 bg-linear-to-r from-accent-50 via-accent-100 to-accent-200 shadow-elevate backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -91,7 +91,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-accent-200/70 bg-linear-to-r from-white via-mist-50 to-accent-100/90 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-accent-300/60 bg-linear-to-r from-accent-50 via-accent-100 to-accent-200 backdrop-blur-xl lg:hidden"
           >
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
               {navLinks.map((link) => (

@@ -50,7 +50,7 @@ export default function ProductsPage() {
           breadcrumb="Products"
           eyebrow="Our Portfolio"
           title="An extensive and diverse range of medicines"
-          description="At Sanomed Health Care we take pride in our ability to bring a comprehensive pharmaceutical portfolio to market — each product targeting chronic or acute treatment needs, and every batch held to the same documented standard."
+          description="We take pride in our ability to bring a comprehensive pharmaceutical portfolio to market — each product targeting chronic or acute treatment needs, and every batch held to the same documented standard."
         />
 
         <section className="bg-white py-24 sm:py-32">

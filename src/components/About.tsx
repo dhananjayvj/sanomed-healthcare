@@ -27,19 +27,19 @@ export function About() {
                 <>
                   Incorporated in {company.incorporated} and registered with the
                   Ministry of Corporate Affairs under the Registrar of Companies,
-                  Bengaluru, {company.legalName} operates from the KSSIDC
-                  Industrial Estate in Rajajinagar — one of Bangalore&apos;s
-                  established industrial corridors for licensed pharmaceutical,
-                  chemical and allied businesses.
+                  Bengaluru, we operate from the KSSIDC Industrial Estate in
+                  Rajajinagar — one of Bangalore&apos;s established industrial
+                  corridors for licensed pharmaceutical, chemical and allied
+                  businesses.
                 </>
               }
             />
 
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-navy-700/85">
-                The company is classified as a private, non-government entity
-                limited by shares, operating under NIC code 24290 — the
-                manufacture of chemicals and chemical products. Across{" "}
+                We are a private, non-government company limited by shares,
+                operating under NIC code 24290 — the manufacture of chemicals
+                and chemical products. Across{" "}
                 <Link
                   href="/#expertise"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"
@@ -49,8 +49,8 @@ export function About() {
                 , we design, specify and quality-assure every product, then
                 deliver it through trusted contract manufacturing partners — so
                 every engagement is structured around the same principle that
-                governs the company&apos;s statutory record: precise
-                documentation, verifiable at every step. You can review our{" "}
+                governs our statutory record: precise documentation, verifiable
+                at every step. You can review our{" "}
                 <Link
                   href="/products"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"

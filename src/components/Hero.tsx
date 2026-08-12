@@ -79,11 +79,11 @@ export function Hero() {
                 {...rise(0.18)}
                 className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-700/85 sm:order-none sm:mt-4 sm:text-lg"
               >
-                {company.legalName} is a Bengaluru-based pharmaceutical and
-                specialty chemical company — developing, specifying and
-                quality-assuring products that are manufactured through trusted
-                contract partners, with full batch traceability and disciplined
-                statutory compliance behind everything we release.
+                We are a Bengaluru-based pharmaceutical and specialty chemical
+                company — developing, specifying and quality-assuring products
+                that are manufactured through trusted contract partners, with
+                full batch traceability and disciplined statutory compliance
+                behind everything we release.
               </motion.p>
 
               <motion.div
