@@ -23,7 +23,6 @@ export const company = {
   emails: {
     primary: "contact@sanomedhealthcare.com",
     secondary: "info@sanomedhealthcare.com",
-    admin: "admin@sanomedhealthcare.com",
   },
   phone: {
     display: "+91 93803 30849",
