@@ -62,16 +62,6 @@ export function VisionMission() {
                 </div>
               </Reveal>
             ))}
-
-            <Reveal delay={0.3} as="li">
-              <div className="flex h-full flex-col justify-center rounded-2xl border border-dashed border-navy-200 bg-white p-7">
-                <p className="text-sm leading-relaxed text-navy-700">
-                  Together these values define who we are as a company — and
-                  they guide every decision-making process, from research
-                  prioritisation to supplier selection.
-                </p>
-              </div>
-            </Reveal>
           </ul>
         </div>
       </Container>
