@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: company.legalName }],
   icons: {
-    icon: "/images/logo.jpeg",
-    shortcut: "/images/logo.jpeg",
-    apple: "/images/logo.jpeg",
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
   },
   openGraph: {
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical development and supply from Bengaluru, India.",
-    images: [{ url: "/images/logo.jpeg", width: 1358, height: 467, alt: company.shortName }],
+    images: [{ url: "/images/logo.png", width: 1358, height: 467, alt: company.shortName }],
     locale: "en_IN",
   },
   twitter: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Drug development, quality assurance and supply management from a registered company in Bengaluru, India.",
-    images: ["/images/logo.jpeg"],
+    images: ["/images/logo.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -68,7 +68,7 @@ const organizationSchema = {
   description: company.tagline,
   foundingDate: company.incorporated,
   identifier: company.cin,
-  logo: `${siteUrl}/images/logo.jpeg`,
+  logo: `${siteUrl}/images/logo.png`,
   email: company.emails.primary,
   telephone: company.phone.href,
   address: {
