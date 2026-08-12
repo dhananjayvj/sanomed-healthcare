@@ -19,7 +19,7 @@ const pillars = [
   {
     icon: Leaf,
     title: "Sustainability",
-    copy: "As a responsible corporate citizen we work to minimise waste, conserve resources and adopt eco-friendly manufacturing processes across our operations.",
+    copy: "As a responsible corporate citizen we work to minimise waste, conserve resources and adopt eco-friendly production practices across our operations and partner facilities.",
     tags: ["Waste reduction", "Resource use", "Clean process"],
   },
 ];
@@ -38,7 +38,7 @@ const horizons = [
   {
     icon: TrendingUp,
     title: "Affordable Access",
-    copy: "Cost-efficient manufacturing that widens access without conceding a single point of quality.",
+    copy: "Cost-efficient production that widens access without conceding a single point of quality.",
   },
 ];
 

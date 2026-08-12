@@ -5,7 +5,7 @@
 export const company = {
   legalName: "SANOMED HEALTH CARE PRIVATE LIMITED",
   shortName: "Sanomed Health Care",
-  tagline: "Precision Chemical & Healthcare Manufacturing Solutions",
+  tagline: "Precision Chemical & Healthcare Solutions",
   promise: "Revolutionising Healthcare through Innovation and Excellence",
   cin: "U24290KA2022PTC159246",
   incorporated: "2022",
@@ -45,7 +45,6 @@ export const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#expertise", label: "Expertise" },
   { href: "/products", label: "Products" },
-  { href: "/#leadership", label: "Leadership" },
   { href: "/careers", label: "Careers" },
   { href: "/#contact", label: "Contact" },
 ] as const;
@@ -75,39 +74,7 @@ export const coreValues = [
   },
   {
     title: "Sustainability",
-    copy: "Responsible manufacturing that conserves resources and minimises environmental impact.",
-  },
-] as const;
-
-export const governancePillars = [
-  {
-    title: "Board Accountability",
-    copy: "Two directors with complementary, explicitly divided mandates — so neither quality nor governance depends on a single point of judgement.",
-  },
-  {
-    title: "Quality Ownership",
-    copy: "Quality outcomes sit with the board, not only the plant floor: specifications, deviations and release decisions escalate to director level.",
-  },
-  {
-    title: "Measured Growth",
-    copy: "Capacity is added against demonstrated demand and proven capability, keeping expansion within what our quality systems can absorb.",
-  },
-] as const;
-
-export const leadership = [
-  {
-    name: "Manoj R Tolamatti",
-    role: "Director",
-    focus: "Operations, Quality Management & Growth",
-    bio: "Leads manufacturing operations and the quality management agenda, translating regulatory expectation into repeatable plant-floor practice and driving the company's capacity growth roadmap.",
-    initials: "MT",
-  },
-  {
-    name: "Subramanyachar Manjunath",
-    role: "Director",
-    focus: "Corporate Governance & Statutory Compliance",
-    bio: "Oversees corporate governance, statutory filings and board process — maintaining the company's standing with the Registrar of Companies and its compliance posture across every engagement.",
-    initials: "SM",
+    copy: "Responsible sourcing and production that conserves resources and minimises environmental impact across our operations and partner network.",
   },
 ] as const;
 

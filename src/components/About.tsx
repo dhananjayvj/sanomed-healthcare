@@ -19,7 +19,7 @@ export function About() {
               eyebrow="About Us"
               title={
                 <>
-                  A registered pharmaceutical manufacturer built on{" "}
+                  A registered pharmaceutical company built on{" "}
                   <span className="text-accent-700">documented process</span>
                 </>
               }
@@ -30,7 +30,7 @@ export function About() {
                   Bengaluru, {company.legalName} operates from the KSSIDC
                   Industrial Estate in Rajajinagar — one of Bangalore&apos;s
                   established industrial corridors for licensed pharmaceutical,
-                  chemical and allied manufacturing.
+                  chemical and allied businesses.
                 </>
               }
             />
@@ -46,7 +46,9 @@ export function About() {
                 >
                   drug development, formulation and supply
                 </Link>
-                , every engagement is structured around the same principle that
+                , we design, specify and quality-assure every product, then
+                deliver it through trusted contract manufacturing partners — so
+                every engagement is structured around the same principle that
                 governs the company&apos;s statutory record: precise
                 documentation, verifiable at every step. You can review our{" "}
                 <Link
@@ -55,12 +57,12 @@ export function About() {
                 >
                   product portfolio
                 </Link>{" "}
-                or the{" "}
+                or explore our{" "}
                 <Link
-                  href="/#leadership"
+                  href="/#expertise"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"
                 >
-                  board responsible for it
+                  areas of expertise
                 </Link>
                 .
               </p>

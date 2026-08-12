@@ -16,7 +16,7 @@ export function ProductsPreview() {
           <SectionHeading
             eyebrow="Products"
             title="An extensive and diverse range of medicines"
-            description="Our portfolio spans chronic and acute treatments across six therapy areas — reflecting a commitment to meeting varied healthcare needs from a single manufacturing base."
+            description="Our portfolio spans chronic and acute treatments across six therapy areas — reflecting a commitment to meeting varied healthcare needs under a single, documented quality standard."
           />
           <Reveal delay={0.1}>
             <Link

@@ -22,14 +22,14 @@ const capabilities = [
   },
   {
     icon: FlaskConical,
-    title: "Specialty Chemical Manufacturing",
-    copy: "Production of fine and specialty chemicals to customer specification — from gram-scale trial batches through to sustained commercial supply under controlled process parameters.",
+    title: "Specialty Chemical Development",
+    copy: "Development of fine and specialty chemicals to customer specification — from gram-scale trial batches through to sustained commercial supply, with production placed with vetted contract partners under controlled process parameters.",
     points: ["Custom specification", "Controlled reactions", "Scale-up support"],
   },
   {
     icon: Beaker,
-    title: "Healthcare Product Synthesis",
-    copy: "Synthesis and formulation of healthcare-grade intermediates and finished products, with material provenance and process history documented against every batch produced.",
+    title: "Healthcare Product Development",
+    copy: "Design and formulation of healthcare-grade intermediates and finished products, with material provenance and process history documented against every batch produced at our partner facilities.",
     points: ["Intermediates", "Formulation", "Batch genealogy"],
   },
   {
@@ -40,9 +40,9 @@ const capabilities = [
   },
   {
     icon: Workflow,
-    title: "Contract Manufacturing",
-    copy: "Dedicated contract and third-party manufacturing under confidentiality — your specification, your quality standard, our plant, capacity and documentation discipline.",
-    points: ["Third-party supply", "NDA-backed", "Committed capacity"],
+    title: "Third-Party Manufacturing",
+    copy: "End-to-end management of contract and third-party manufacturing under confidentiality — your specification, your quality standard, delivered through our vetted partner network with our documentation discipline.",
+    points: ["Vetted partners", "NDA-backed", "Committed capacity"],
   },
   {
     icon: Truck,
@@ -69,7 +69,7 @@ const process = [
     icon: PackageCheck,
     step: "03",
     title: "Production & Release",
-    copy: "Commercial batches manufactured under fixed SOPs, tested, documented and released with full traceability.",
+    copy: "Commercial batches produced at partner facilities under fixed SOPs, tested, documented and released with full traceability.",
   },
 ];
 
@@ -86,7 +86,7 @@ export function Capabilities() {
           eyebrow="Areas of Expertise"
           align="center"
           title="Six disciplines, one documented standard"
-          description="Development, manufacturing, synthesis, quality, contract supply and distribution — delivered from a single registered facility under a common quality framework."
+          description="Development, quality, supply and distribution — delivered through a registered company under a common quality framework and a network of vetted manufacturing partners."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

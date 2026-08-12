@@ -20,7 +20,7 @@ import { company } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Build a rewarding career at Sanomed Health Care — opportunities across research and development, quality assurance, regulatory affairs, manufacturing, marketing and sales in Bengaluru, India.",
+    "Build a rewarding career at Sanomed Health Care — opportunities across research and development, quality assurance, regulatory affairs, supply management, marketing and sales in Bengaluru, India.",
 };
 
 const RELATED_LINKS = [
@@ -37,7 +37,7 @@ const RELATED_LINKS = [
   {
     href: "/products",
     title: "Products",
-    copy: "The portfolio our teams develop, manufacture and release.",
+    copy: "The portfolio our teams develop, specify and release.",
   },
 ];
 
@@ -45,7 +45,7 @@ const reasons = [
   {
     icon: Sparkles,
     title: "Exciting Opportunities",
-    copy: "Roles across research and development, quality assurance, regulatory affairs, marketing, sales and manufacturing — with room to move between them as you grow.",
+    copy: "Roles across research and development, quality assurance, regulatory affairs, supply management, marketing and sales — with room to move between them as you grow.",
   },
   {
     icon: Lightbulb,
@@ -74,7 +74,7 @@ const functions = [
   "Quality Assurance",
   "Quality Control",
   "Regulatory Affairs",
-  "Manufacturing & Production",
+  "Production Management",
   "Supply Chain",
   "Marketing",
   "Sales",

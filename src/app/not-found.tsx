@@ -18,12 +18,12 @@ const destinations = [
   {
     href: "/#expertise",
     title: "Areas of Expertise",
-    copy: "Drug development, manufacturing, synthesis, quality and contract supply.",
+    copy: "Drug development, quality, synthesis and third-party supply.",
   },
   {
     href: "/products",
     title: "Products",
-    copy: "Therapy areas across chronic and acute care, and the formats we manufacture.",
+    copy: "Therapy areas across chronic and acute care, and the formats we offer.",
   },
   {
     href: "/careers",

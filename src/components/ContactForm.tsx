@@ -16,10 +16,10 @@ type Errors = Partial<Record<Field, string>>;
 
 const INTERESTS = [
   "Drug Development",
-  "Specialty Chemical Manufacturing",
-  "Healthcare Product Synthesis",
+  "Specialty Chemical Development",
+  "Healthcare Product Development",
   "Quality Assurance & Testing",
-  "Contract Manufacturing",
+  "Third-Party Manufacturing",
   "Marketing & Distribution",
   "General Enquiry",
 ];

@@ -65,8 +65,7 @@ export function Hero() {
                 className="mt-6 text-[2.3rem] font-semibold leading-[1.08] text-white sm:mt-7 sm:text-6xl sm:leading-[1.05]"
               >
                 Precision Chemical &amp;{" "}
-                <span className="text-gradient">Healthcare Manufacturing</span>{" "}
-                Solutions
+                <span className="text-gradient">Healthcare Solutions</span>
               </motion.h1>
 
               <motion.p
@@ -81,10 +80,10 @@ export function Hero() {
                 className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-100/75 sm:order-none sm:mt-4 sm:text-lg"
               >
                 {company.legalName} is a Bengaluru-based pharmaceutical and
-                specialty chemical manufacturer — transforming healthcare
-                through cutting-edge research, rigorous quality standards and
-                disciplined statutory compliance, with full batch traceability
-                behind every product we release.
+                specialty chemical company — developing, specifying and
+                quality-assuring products that are manufactured through trusted
+                contract partners, with full batch traceability and disciplined
+                statutory compliance behind everything we release.
               </motion.p>
 
               <motion.div

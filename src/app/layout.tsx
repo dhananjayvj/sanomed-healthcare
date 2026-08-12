@@ -18,30 +18,37 @@ export const metadata: Metadata = {
     template: `%s | ${company.shortName}`,
   },
   description:
-    "Sanomed Health Care Private Limited is a Bengaluru-based pharmaceutical and specialty chemical manufacturer — drug development, healthcare product synthesis, quality assurance and contract manufacturing under documented quality systems.",
+    "Sanomed Health Care Private Limited is a Bengaluru-based pharmaceutical and specialty chemical company — drug development, formulation, quality assurance and supply, with production delivered through trusted contract manufacturing partners under documented quality systems.",
   keywords: [
-    "pharmaceutical manufacturer Bangalore",
-    "specialty chemical manufacturing",
-    "contract manufacturing India",
-    "healthcare product synthesis",
+    "pharmaceutical company Bangalore",
+    "specialty chemical solutions",
+    "third-party manufacturing India",
+    "healthcare product development",
     "Sanomed Health Care",
     "KSSIDC Rajajinagar",
   ],
   authors: [{ name: company.legalName }],
+  icons: {
+    icon: "/images/logo.jpg",
+    shortcut: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: company.legalName,
     title: `${company.shortName} — ${company.tagline}`,
     description:
-      "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical manufacturing from Bengaluru, India.",
+      "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical development and supply from Bengaluru, India.",
+    images: [{ url: "/images/logo.jpg", width: 1358, height: 467, alt: company.shortName }],
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
     title: `${company.shortName} — ${company.tagline}`,
     description:
-      "Drug development, contract manufacturing and quality assurance from a registered facility in Bengaluru, India.",
+      "Drug development, quality assurance and supply management from a registered company in Bengaluru, India.",
+    images: ["/images/logo.jpg"],
   },
   robots: { index: true, follow: true },
 };
@@ -61,6 +68,7 @@ const organizationSchema = {
   description: company.tagline,
   foundingDate: company.incorporated,
   identifier: company.cin,
+  logo: `${siteUrl}/images/logo.jpg`,
   email: company.emails.primary,
   telephone: company.phone.href,
   address: {

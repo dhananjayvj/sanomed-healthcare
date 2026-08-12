@@ -29,12 +29,12 @@ const RELATED_LINKS = [
   {
     href: "/careers",
     title: "Careers",
-    copy: "Join the team that develops and manufactures these products.",
+    copy: "Join the team that develops and supplies these products.",
   },
 ];
 
 const assurances = [
-  "Manufactured under documented quality systems",
+  "Produced under documented quality systems",
   "Certificate of analysis issued for every batch",
   "Retention samples held against each release",
   "Full material provenance and batch genealogy",
@@ -50,7 +50,7 @@ export default function ProductsPage() {
           breadcrumb="Products"
           eyebrow="Our Portfolio"
           title="An extensive and diverse range of medicines"
-          description="At Sanomed Health Care we take pride in our ability to produce a comprehensive pharmaceutical portfolio — each product targeting chronic or acute treatment needs, and every batch held to the same documented standard."
+          description="At Sanomed Health Care we take pride in our ability to bring a comprehensive pharmaceutical portfolio to market — each product targeting chronic or acute treatment needs, and every batch held to the same documented standard."
         />
 
         <section className="bg-white py-24 sm:py-32">
@@ -92,8 +92,8 @@ export default function ProductsPage() {
               <Reveal>
                 <SectionHeading
                   eyebrow="Dosage Forms"
-                  title="Formats we manufacture"
-                  description="Formulation capability across solid, liquid and topical presentations, with specialty intermediates supplied to partner manufacturers."
+                  title="Formats we offer"
+                  description="Formulation capability across solid, liquid and topical presentations, produced through partner manufacturers to our specification."
                 />
                 <ul className="mt-8 flex flex-wrap gap-2.5">
                   {dosageForms.map((form) => (

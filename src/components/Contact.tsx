@@ -12,7 +12,7 @@ export function Contact() {
           eyebrow="Contact"
           align="center"
           title="Start a conversation with our team"
-          description="Whether you are scoping a contract manufacturing partner or evaluating a specialty chemical supply, we will respond with a considered technical position — not a sales pitch."
+          description="Whether you are scoping a third-party manufacturing engagement or evaluating a specialty chemical supply, we will respond with a considered technical position — not a sales pitch."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
@@ -86,9 +86,9 @@ export function Contact() {
 
             <div className="rounded-2xl border border-mist-300 bg-white p-6">
               <p className="text-sm leading-relaxed text-navy-700">
-                For procurement and contract manufacturing discussions, please
-                include indicative volumes and timelines in your enquiry — it
-                lets us reply with specifics on the first response.
+                For procurement and third-party manufacturing discussions,
+                please include indicative volumes and timelines in your enquiry
+                — it lets us reply with specifics on the first response.
               </p>
             </div>
           </Reveal>
