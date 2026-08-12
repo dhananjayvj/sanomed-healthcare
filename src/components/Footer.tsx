@@ -4,15 +4,6 @@ import { addressLines, company, navLinks } from "@/lib/site";
 import { Wordmark } from "./Logo";
 import { Container } from "./Section";
 
-const capabilityLinks = [
-  "Drug Development",
-  "Specialty Chemical Development",
-  "Healthcare Product Development",
-  "Quality Assurance & Testing",
-  "Third-Party Manufacturing",
-  "Marketing & Distribution",
-];
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -51,22 +42,6 @@ export function Footer() {
                     className="text-sm text-navy-700 underline-offset-4 transition-colors hover:text-navy-950 hover:underline"
                   >
                     {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-accent-700">
-              Capabilities
-            </h2>
-            <ul className="mt-5 space-y-3">
-              {capabilityLinks.map((item) => (
-                <li key={item}>
-                  <Link
-                    href="/#expertise"
-                    className="text-sm text-navy-700 underline-offset-4 transition-colors hover:text-navy-950 hover:underline"
-                  >
-                    {item}
                   </Link>
                 </li>
               ))}
