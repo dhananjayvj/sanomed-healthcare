@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <Image
-      src="/images/logo.jpg"
+      src="/images/logo.jpeg"
       alt="Sanomed Health Care"
       width={1358}
       height={467}
