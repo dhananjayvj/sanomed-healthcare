@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: company.legalName }],
   icons: {
-    icon: "/images/sanomed.png",
-    shortcut: "/images/sanomed.png",
-    apple: "/images/sanomed.png",
+    icon: "/images/sanomed.webp",
+    shortcut: "/images/sanomed.webp",
+    apple: "/images/sanomed.webp",
   },
   openGraph: {
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical development and supply from Bengaluru, India.",
-    images: [{ url: "/images/sanomed.png", width: 1358, height: 467, alt: company.shortName }],
+    images: [{ url: "/images/sanomed.webp", width: 1358, height: 467, alt: company.shortName }],
     locale: "en_IN",
   },
   twitter: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Drug development, quality assurance and supply management from a registered company in Bengaluru, India.",
-    images: ["/images/sanomed.png"],
+    images: ["/images/sanomed.webp"],
   },
   robots: { index: true, follow: true },
 };
@@ -68,7 +68,7 @@ const organizationSchema = {
   description: company.tagline,
   foundingDate: company.incorporated,
   identifier: company.cin,
-  logo: `${siteUrl}/images/sanomed.png`,
+  logo: `${siteUrl}/images/sanomed.webp`,
   email: company.emails.primary,
   telephone: company.phone.href,
   address: {
