@@ -105,11 +105,12 @@ function validateAll(values: Values): Errors {
 
 const fieldClass = (invalid: boolean) =>
   cn(
-    "w-full rounded-xl border bg-white px-4 py-3 text-[0.95rem] text-navy-950 shadow-xs transition-all duration-200 placeholder:text-navy-300",
-    "focus:border-accent-500 focus:ring-4 focus:ring-accent-500/12 focus:outline-none",
+    "w-full rounded-[15px] border-none px-4 py-3 text-[0.95rem] text-navy-950 outline-none transition-all duration-300 ease-in-out placeholder:text-navy-400",
+    "bg-[#cccccc] shadow-[inset_2px_5px_10px_rgba(0,0,0,0.3)]",
+    "focus:bg-white focus:scale-[1.05] focus:shadow-[13px_13px_100px_#969696,-13px_-13px_100px_#ffffff]",
     invalid
-      ? "border-red-400 focus:border-red-500 focus:ring-red-500/12"
-      : "border-mist-300 hover:border-navy-200",
+      ? "text-red-700 placeholder:text-red-400"
+      : "",
   );
 
 export function ContactForm() {
