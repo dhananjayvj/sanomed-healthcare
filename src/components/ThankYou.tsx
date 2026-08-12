@@ -58,10 +58,10 @@ export function ThankYou() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-20 sm:pt-40 sm:pb-24">
-        <div className="absolute inset-0 -z-10 bg-grid mask-fade-b" aria-hidden />
+      <section className="relative isolate overflow-hidden bg-white pt-32 pb-20 sm:pt-40 sm:pb-24">
+        <div className="absolute inset-0 -z-10 bg-grid-light mask-fade-b" aria-hidden />
         <div
-          className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/18 blur-[120px]"
+          className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/15 blur-[120px]"
           aria-hidden
         />
 
@@ -72,26 +72,26 @@ export function ThankYou() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl"
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-navy-950">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-white">
               <CheckCircle2 className="h-7 w-7" aria-hidden />
             </span>
-            <h1 className="mt-7 text-4xl font-semibold leading-[1.1] text-white sm:text-5xl">
+            <h1 className="mt-7 text-4xl font-semibold leading-[1.1] text-navy-950 sm:text-5xl">
               Thank you — your enquiry is on its way
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-navy-100/75">
+            <p className="mt-6 text-lg leading-relaxed text-navy-700/85">
               We appreciate you taking the time to contact {company.shortName}.
               Your requirement has been captured and will be reviewed by the
               team responsible for that capability.
             </p>
 
             {mailtoHref ? (
-              <div className="mt-8 rounded-2xl border border-white/12 bg-white/[0.04] p-6">
-                <p className="text-[0.95rem] leading-relaxed text-navy-100/80">
+              <div className="mt-8 rounded-2xl border border-mist-300 bg-mist-50 p-6">
+                <p className="text-[0.95rem] leading-relaxed text-navy-800">
                   If your email client did not open, your enquiry is still
                   saved — reopen it below, or write to us directly at{" "}
                   <a
                     href={`mailto:${company.emails.primary}`}
-                    className="font-medium text-accent-300 underline-offset-4 hover:underline"
+                    className="font-medium text-accent-700 underline-offset-4 hover:underline"
                   >
                     {company.emails.primary}
                   </a>
@@ -99,7 +99,7 @@ export function ThankYou() {
                 </p>
                 <a
                   href={mailtoHref}
-                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-accent-400"
+                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-400"
                 >
                   <Mail className="h-4 w-4" aria-hidden />
                   Reopen the enquiry email
@@ -110,13 +110,13 @@ export function ThankYou() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors hover:border-navy-300 hover:bg-navy-50"
               >
                 Back to home
               </Link>
               <Link
                 href="/products"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-navy-950 px-7 py-3.5 text-sm font-semibold text-white shadow-elevate transition-colors hover:bg-navy-800"
               >
                 View products
                 <ArrowRight

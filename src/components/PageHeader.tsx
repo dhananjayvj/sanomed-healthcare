@@ -34,10 +34,10 @@ export function PageHeader({
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-20 sm:pt-40 sm:pb-24">
-      <div className="absolute inset-0 -z-10 bg-grid mask-fade-b" aria-hidden />
+    <section className="relative isolate overflow-hidden bg-white pt-32 pb-20 sm:pt-40 sm:pb-24">
+      <div className="absolute inset-0 -z-10 bg-grid-light mask-fade-b" aria-hidden />
       <div
-        className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/18 blur-[120px]"
+        className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/15 blur-[120px]"
         aria-hidden
       />
       <script
@@ -47,11 +47,11 @@ export function PageHeader({
 
       <Container>
         <nav aria-label="Breadcrumb">
-          <ol className="flex items-center gap-1.5 text-sm text-navy-100/55">
+          <ol className="flex items-center gap-1.5 text-sm text-navy-500">
             <li>
               <Link
                 href="/"
-                className="underline-offset-4 transition-colors hover:text-white hover:underline"
+                className="underline-offset-4 transition-colors hover:text-navy-950 hover:underline"
               >
                 Home
               </Link>
@@ -59,18 +59,18 @@ export function PageHeader({
             <li aria-hidden>
               <ChevronRight className="h-3.5 w-3.5" />
             </li>
-            <li className="font-medium text-accent-300" aria-current="page">
+            <li className="font-medium text-accent-700" aria-current="page">
               {breadcrumb}
             </li>
           </ol>
         </nav>
 
         <div className="mt-8 max-w-3xl">
-          <Eyebrow tone="light">{eyebrow}</Eyebrow>
-          <h1 className="mt-5 text-4xl font-semibold leading-[1.1] text-white sm:text-5xl">
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h1 className="mt-5 text-4xl font-semibold leading-[1.1] text-navy-950 sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-navy-100/75">
+          <p className="mt-6 text-lg leading-relaxed text-navy-700/85">
             {description}
           </p>
         </div>

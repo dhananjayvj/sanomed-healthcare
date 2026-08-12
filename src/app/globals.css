@@ -89,16 +89,6 @@
 
 @layer utilities {
   /* Fine engineering grid — evokes precision manufacturing */
-  .bg-grid {
-    background-image: linear-gradient(
-        to right,
-        rgb(255 255 255 / 0.055) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.055) 1px, transparent 1px);
-    background-size: 56px 56px;
-  }
-
   .bg-grid-light {
     background-image: linear-gradient(
         to right,
@@ -116,9 +106,9 @@
   .text-gradient {
     background: linear-gradient(
       100deg,
-      var(--color-accent-300) 0%,
-      var(--color-accent-200) 45%,
-      #ffffff 100%
+      var(--color-accent-700) 0%,
+      var(--color-accent-500) 45%,
+      var(--color-navy-800) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;

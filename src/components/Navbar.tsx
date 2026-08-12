@@ -32,7 +32,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-navy-950/85 backdrop-blur-xl"
+          ? "border-b border-mist-300 bg-white/90 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -49,7 +49,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-navy-100/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-full px-4 py-2 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-950"
               >
                 {link.label}
               </Link>
@@ -60,7 +60,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/#contact"
-            className="hidden items-center gap-1.5 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98] sm:inline-flex"
+            className="hidden items-center gap-1.5 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98] sm:inline-flex"
           >
             Request a Quote
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -72,7 +72,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-200 text-navy-950 transition-colors hover:bg-navy-50 lg:hidden"
           >
             {open ? (
               <X className="h-5 w-5" aria-hidden />
@@ -91,7 +91,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-white/10 bg-navy-950/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-mist-300 bg-white/95 backdrop-blur-xl lg:hidden"
           >
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
               {navLinks.map((link) => (
@@ -99,7 +99,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-base font-medium text-navy-100/85 transition-colors hover:bg-white/5 hover:text-white"
+                    className="block rounded-xl px-4 py-3 text-base font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-950"
                   >
                     {link.label}
                   </Link>
@@ -109,7 +109,7 @@ export function Navbar() {
                 <Link
                   href="/#contact"
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-center gap-1.5 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-navy-950"
+                  className="flex items-center justify-center gap-1.5 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-white"
                 >
                   Request a Quote
                   <ArrowRight className="h-4 w-4" aria-hidden />

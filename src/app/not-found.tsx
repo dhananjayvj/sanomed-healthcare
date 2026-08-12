@@ -42,29 +42,29 @@ export default function NotFound() {
     <>
       <Navbar />
       <main className="flex-1">
-        <section className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-24 sm:pt-40 sm:pb-28">
+        <section className="relative isolate overflow-hidden bg-white pt-32 pb-24 sm:pt-40 sm:pb-28">
           <div
-            className="absolute inset-0 -z-10 bg-grid mask-fade-b"
+            className="absolute inset-0 -z-10 bg-grid-light mask-fade-b"
             aria-hidden
           />
           <div
-            className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/18 blur-[120px]"
+            className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/15 blur-[120px]"
             aria-hidden
           />
 
           <Container>
             <div className="max-w-3xl">
-              <Eyebrow tone="light">Error 404</Eyebrow>
+              <Eyebrow>Error 404</Eyebrow>
               <p
-                className="mt-6 text-6xl font-semibold tracking-tight text-white/15 sm:text-7xl"
+                className="mt-6 text-6xl font-semibold tracking-tight text-navy-950/10 sm:text-7xl"
                 aria-hidden
               >
                 404
               </p>
-              <h1 className="mt-4 text-4xl font-semibold leading-[1.1] text-white sm:text-5xl">
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.1] text-navy-950 sm:text-5xl">
                 We couldn&apos;t find that page
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-navy-100/75">
+              <p className="mt-6 text-lg leading-relaxed text-navy-700/85">
                 The address may have changed, or the link that brought you here
                 may be out of date. Everything on the site is one step away
                 below — or write to us and we will point you to the right place.
@@ -73,14 +73,14 @@ export default function NotFound() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-navy-950 shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-white shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift"
                 >
                   <Home className="h-4 w-4" aria-hidden />
                   Back to home
                 </Link>
                 <a
                   href={`mailto:${company.emails.primary}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors hover:border-navy-300 hover:bg-navy-50"
                 >
                   <Mail className="h-4 w-4" aria-hidden />
                   Email us

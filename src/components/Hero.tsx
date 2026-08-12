@@ -34,16 +34,16 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-navy-950 pt-28 pb-20 sm:pt-40 sm:pb-28"
+      className="relative isolate overflow-hidden bg-white pt-28 pb-20 sm:pt-40 sm:pb-28"
     >
       {/* Depth: engineering grid + soft emerald bloom */}
-      <div className="absolute inset-0 -z-10 bg-grid mask-fade-b" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-grid-light mask-fade-b" aria-hidden />
       <div
-        className="absolute -top-40 -right-24 -z-10 h-[34rem] w-[34rem] rounded-full bg-accent-500/20 blur-[120px]"
+        className="absolute -top-40 -right-24 -z-10 h-[34rem] w-[34rem] rounded-full bg-accent-500/15 blur-[120px]"
         aria-hidden
       />
       <div
-        className="absolute -bottom-56 -left-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-navy-500/25 blur-[130px]"
+        className="absolute -bottom-56 -left-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-navy-500/12 blur-[130px]"
         aria-hidden
       />
 
@@ -51,7 +51,7 @@ export function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
           <div>
             <motion.div {...rise(0)}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-400/25 bg-accent-500/10 px-3.5 py-1.5 text-xs font-medium text-accent-200">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3.5 py-1.5 text-xs font-medium text-accent-800">
                 <FlaskConical className="h-3.5 w-3.5" aria-hidden />
                 Pharmaceuticals · Specialty Chemicals · Healthcare
               </span>
@@ -62,7 +62,7 @@ export function Hero() {
             <div className="flex flex-col">
               <motion.h1
                 {...rise(0.08)}
-                className="mt-6 text-[2.3rem] font-semibold leading-[1.08] text-white sm:mt-7 sm:text-6xl sm:leading-[1.05]"
+                className="mt-6 text-[2.3rem] font-semibold leading-[1.08] text-navy-950 sm:mt-7 sm:text-6xl sm:leading-[1.05]"
               >
                 Precision Chemical &amp;{" "}
                 <span className="text-gradient">Healthcare Solutions</span>
@@ -70,14 +70,14 @@ export function Hero() {
 
               <motion.p
                 {...rise(0.14)}
-                className="mt-5 text-base font-medium text-accent-300 sm:mt-6 sm:text-lg"
+                className="mt-5 text-base font-medium text-accent-700 sm:mt-6 sm:text-lg"
               >
                 {company.promise}
               </motion.p>
 
               <motion.p
                 {...rise(0.18)}
-                className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-100/75 sm:order-none sm:mt-4 sm:text-lg"
+                className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-700/85 sm:order-none sm:mt-4 sm:text-lg"
               >
                 {company.legalName} is a Bengaluru-based pharmaceutical and
                 specialty chemical company — developing, specifying and
@@ -92,7 +92,7 @@ export function Hero() {
               >
                 <Link
                   href="/#contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-navy-950 shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3.5 text-sm font-semibold text-white shadow-elevate transition-all hover:bg-accent-400 hover:shadow-lift active:scale-[0.98]"
                 >
                   Request a Consultation
                   <ArrowRight
@@ -102,7 +102,7 @@ export function Hero() {
                 </Link>
                 <Link
                   href="/#expertise"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors hover:border-navy-300 hover:bg-navy-50"
                 >
                   Explore Capabilities
                 </Link>
@@ -111,19 +111,19 @@ export function Hero() {
 
             <motion.dl
               {...rise(0.32)}
-              className="mt-11 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-3"
+              className="mt-11 grid gap-4 border-t border-mist-300 pt-8 sm:grid-cols-3"
             >
               {trustIndicators.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-3">
                   <Icon
-                    className="mt-0.5 h-5 w-5 shrink-0 text-accent-400"
+                    className="mt-0.5 h-5 w-5 shrink-0 text-accent-600"
                     aria-hidden
                   />
                   <div className="min-w-0">
-                    <dt className="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-navy-100/50">
+                    <dt className="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-navy-500">
                       {label}
                     </dt>
-                    <dd className="mt-1 truncate text-sm font-semibold text-white">
+                    <dd className="mt-1 truncate text-sm font-semibold text-navy-950">
                       {value}
                     </dd>
                   </div>
@@ -139,8 +139,8 @@ export function Hero() {
             transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="rounded-3xl border border-white/12 bg-white/[0.045] p-1.5 shadow-lift backdrop-blur-sm">
-              <div className="rounded-[1.35rem] border border-white/8 bg-navy-900/70 p-7 sm:p-8">
+            <div className="rounded-3xl border border-mist-300 bg-white p-1.5 shadow-lift">
+              <div className="rounded-[1.35rem] border border-white/8 bg-navy-950 p-7 sm:p-8">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent-300">
                     Corporate Registry
