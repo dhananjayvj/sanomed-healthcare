@@ -36,11 +36,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: company.legalName,
+    siteName: company.shortName,
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical development and supply from Bengaluru, India.",
-    images: [{ url: "/images/sanomed.webp", width: 1358, height: 467, alt: company.shortName }],
+    images: [
+      {
+        url: "/images/sanomed-og.png",
+        width: 1358,
+        height: 467,
+        alt: company.shortName,
+      },
+    ],
     locale: "en_IN",
   },
   twitter: {
@@ -48,7 +55,7 @@ export const metadata: Metadata = {
     title: `${company.shortName} — ${company.tagline}`,
     description:
       "Drug development, quality assurance and supply management from a registered company in Bengaluru, India.",
-    images: ["/images/sanomed.webp"],
+    images: ["/images/sanomed-og.png"],
   },
   robots: { index: true, follow: true },
 };
