@@ -70,7 +70,7 @@ export function About() {
           </div>
 
           <Reveal delay={0.08}>
-            <figure className="overflow-hidden rounded-3xl border border-navy-800 bg-navy-950 p-9 sm:p-10">
+            <figure className="site-card site-card-dark overflow-hidden p-9 sm:p-10">
               <Quote className="h-7 w-7 text-accent-400" aria-hidden />
               <blockquote className="mt-6 text-xl font-medium leading-snug text-white sm:text-2xl">
                 If it isn&apos;t documented, it didn&apos;t happen. Every batch,

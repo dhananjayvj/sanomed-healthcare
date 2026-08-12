@@ -64,7 +64,7 @@ export default function ProductsPage() {
             <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {therapyAreas.map((area, index) => (
                 <Reveal key={area.name} delay={index * 0.06} as="li">
-                  <article className="group h-full rounded-3xl border border-mist-300 bg-mist-50 p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-300 hover:bg-white hover:shadow-lift">
+                  <article className="site-card site-card-light group h-full p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-300 hover:bg-white hover:shadow-lift">
                     <div className="flex items-start justify-between gap-3">
                       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy-950 text-accent-300">
                         <Pill className="h-5.5 w-5.5" aria-hidden />
@@ -108,7 +108,7 @@ export default function ProductsPage() {
               </Reveal>
 
               <Reveal delay={0.1}>
-                <div className="rounded-3xl border border-navy-800 bg-navy-950 p-9">
+                <div className="site-card site-card-dark p-9">
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-navy-950">
                     <ShieldCheck className="h-5.5 w-5.5" aria-hidden />
                   </span>
@@ -133,7 +133,7 @@ export default function ProductsPage() {
             </div>
 
             <Reveal delay={0.15}>
-              <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-mist-300 bg-white p-9 sm:flex-row sm:items-center">
+              <div className="site-card site-card-white mt-10 flex flex-col items-start justify-between gap-6 p-9 sm:flex-row sm:items-center">
                 <div>
                   <h2 className="text-xl font-semibold text-navy-950">
                     Looking for a specific product or specification?
@@ -178,7 +178,7 @@ export default function ProductsPage() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group flex h-full flex-col rounded-2xl border border-mist-300 bg-mist-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
+                    className="site-card site-card-light group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
                   >
                     <span className="flex items-center justify-between gap-3 text-base font-semibold text-navy-950">
                       {item.title}

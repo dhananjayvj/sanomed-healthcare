@@ -59,7 +59,7 @@ export function Compliance() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {pillars.map(({ icon: Icon, title, copy, tags }, index) => (
             <Reveal key={title} delay={index * 0.08}>
-              <article className="h-full rounded-3xl border border-mist-300 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevate">
+              <article className="site-card site-card-white h-full p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevate">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500/12 text-accent-700">
                   <Icon className="h-5.5 w-5.5" aria-hidden />
                 </span>
@@ -98,7 +98,7 @@ export function Compliance() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="mt-8 overflow-hidden rounded-3xl border border-navy-800 bg-navy-950 p-9 sm:p-11">
+          <div className="site-card site-card-dark mt-8 overflow-hidden p-9 sm:p-11">
             <SectionHeading
               tone="light"
               eyebrow="Looking Ahead"
@@ -109,7 +109,7 @@ export function Compliance() {
             <ul className="mt-10 grid gap-4 sm:grid-cols-3">
               {horizons.map(({ icon: Icon, title, copy }, index) => (
                 <Reveal key={title} delay={0.1 + index * 0.08} as="li">
-                  <div className="h-full rounded-2xl border border-white/10 bg-white/[0.04] p-7">
+                  <div className="site-card h-full border-white/10 bg-white/[0.04] p-7">
                     <Icon className="h-5 w-5 text-accent-400" aria-hidden />
                     <h3 className="mt-4 text-base font-semibold text-white">
                       {title}

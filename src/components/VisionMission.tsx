@@ -9,7 +9,7 @@ export function VisionMission() {
       <Container>
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal>
-            <article className="h-full rounded-3xl border border-mist-300 bg-mist-50 p-9 transition-shadow duration-300 hover:shadow-elevate">
+            <article className="site-card site-card-light h-full p-9 transition-shadow duration-300 hover:shadow-elevate">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy-950 text-accent-300">
                 <Compass className="h-5.5 w-5.5" aria-hidden />
               </span>
@@ -21,7 +21,7 @@ export function VisionMission() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <article className="h-full rounded-3xl border border-navy-800 bg-navy-950 p-9">
+            <article className="site-card site-card-dark h-full p-9">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-navy-950">
                 <Target className="h-5.5 w-5.5" aria-hidden />
               </span>
@@ -46,7 +46,7 @@ export function VisionMission() {
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {coreValues.map((value, index) => (
               <Reveal key={value.title} delay={index * 0.06} as="li">
-                <div className="group h-full rounded-2xl border border-mist-300 bg-mist-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate">
+                <div className="site-card site-card-light group h-full p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate">
                   <span
                     className="text-sm font-semibold tabular-nums text-accent-600"
                     aria-hidden

@@ -33,7 +33,7 @@ export function ProductsPreview() {
         </div>
 
         <Reveal delay={0.08}>
-          <div className="mt-12 grid gap-8 rounded-3xl border border-mist-300 bg-mist-50 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
+          <div className="site-card site-card-light mt-12 grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
             <div>
               <div className="flex items-center gap-2.5">
                 <Pill className="h-4.5 w-4.5 text-accent-600" aria-hidden />

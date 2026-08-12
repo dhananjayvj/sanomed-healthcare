@@ -139,8 +139,8 @@ export function Hero() {
             transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="rounded-3xl border border-mist-300 bg-white p-1.5 shadow-lift">
-              <div className="rounded-[1.35rem] border border-white/8 bg-navy-950 p-7 sm:p-8">
+            <div className="site-card site-card-white p-1.5">
+              <div className="site-card site-card-dark p-7 sm:p-8">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent-300">
                     Corporate Registry

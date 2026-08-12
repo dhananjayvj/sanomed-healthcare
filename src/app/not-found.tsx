@@ -104,7 +104,7 @@ export default function NotFound() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group flex h-full flex-col rounded-2xl border border-mist-300 bg-mist-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
+                    className="site-card site-card-light group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
                   >
                     <span className="flex items-center justify-between gap-3 text-lg font-semibold text-navy-950">
                       {item.title}

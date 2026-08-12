@@ -108,7 +108,7 @@ export default function CareersPage() {
             <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {reasons.map(({ icon: Icon, title, copy }, index) => (
                 <Reveal key={title} delay={index * 0.06} as="li">
-                  <article className="group h-full rounded-3xl border border-mist-300 bg-mist-50 p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-300 hover:bg-white hover:shadow-lift">
+                  <article className="site-card site-card-light group h-full p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-300 hover:bg-white hover:shadow-lift">
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy-950 text-accent-300 transition-transform duration-300 group-hover:scale-105">
                       <Icon className="h-5.5 w-5.5" aria-hidden />
                     </span>
@@ -123,7 +123,7 @@ export default function CareersPage() {
               ))}
 
               <Reveal delay={0.3} as="li">
-                <div className="flex h-full flex-col justify-between rounded-3xl border border-navy-800 bg-navy-950 p-8">
+                <div className="site-card site-card-dark flex h-full flex-col justify-between p-8">
                   <div>
                     <h3 className="text-lg font-semibold text-white">
                       No suitable opening listed?
@@ -180,7 +180,7 @@ export default function CareersPage() {
             </div>
 
             <Reveal delay={0.15}>
-              <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-3xl border border-mist-300 bg-white p-9 sm:flex-row sm:items-center">
+              <div className="site-card site-card-white mt-12 flex flex-col items-start justify-between gap-6 p-9 sm:flex-row sm:items-center">
                 <div className="flex items-start gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-500/12 text-accent-700">
                     <Mail className="h-5 w-5" aria-hidden />
@@ -227,7 +227,7 @@ export default function CareersPage() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group flex h-full flex-col rounded-2xl border border-mist-300 bg-mist-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
+                    className="site-card site-card-light group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate"
                   >
                     <span className="flex items-center justify-between gap-3 text-base font-semibold text-navy-950">
                       {item.title}

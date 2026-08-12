@@ -209,7 +209,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="relative rounded-3xl border border-mist-300 bg-white p-7 shadow-elevate sm:p-9"
+      className="site-card site-card-white relative p-7 sm:p-9"
     >
       <h3 className="text-xl font-semibold text-navy-950">
         Send us an enquiry

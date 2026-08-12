@@ -92,7 +92,7 @@ export function Capabilities() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map(({ icon: Icon, title, copy, points }, index) => (
             <Reveal key={title} delay={index * 0.06}>
-              <article className="group relative h-full overflow-hidden rounded-3xl border border-mist-300 bg-white p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-navy-200 hover:shadow-lift">
+              <article className="site-card site-card-white group relative h-full overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-navy-200 hover:shadow-lift">
                 <span
                   className="absolute inset-x-0 top-0 h-0.5 scale-x-0 bg-linear-to-r from-accent-400 to-accent-600 transition-transform duration-500 group-hover:scale-x-100"
                   aria-hidden
@@ -163,7 +163,7 @@ export function Capabilities() {
             />
             {process.map(({ icon: Icon, step, title, copy }, index) => (
               <Reveal key={step} delay={index * 0.1} as="li">
-                <div className="relative h-full rounded-2xl border border-mist-300 bg-white p-7 shadow-elevate">
+                <div className="site-card site-card-white relative h-full p-7">
                   <div className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/12 text-accent-700">
                       <Icon className="h-5 w-5" aria-hidden />

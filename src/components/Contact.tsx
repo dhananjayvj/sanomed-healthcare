@@ -17,7 +17,7 @@ export function Contact() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal className="min-w-0 space-y-4">
-            <div className="rounded-3xl border border-navy-800 bg-navy-950 p-5 sm:p-8">
+            <div className="site-card site-card-dark p-5 sm:p-8">
               <h3 className="text-lg font-semibold text-white">
                 Talk to us directly
               </h3>
@@ -89,7 +89,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-mist-300 bg-white p-6">
+            <div className="site-card site-card-white p-6">
               <p className="text-sm leading-relaxed text-navy-700">
                 For procurement and third-party manufacturing discussions,
                 please include indicative volumes and timelines in your enquiry

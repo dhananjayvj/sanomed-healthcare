@@ -85,7 +85,7 @@ export function ThankYou() {
             </p>
 
             {mailtoHref ? (
-              <div className="mt-8 rounded-2xl border border-mist-300 bg-mist-50 p-6">
+              <div className="site-card site-card-light mt-8 p-6">
                 <p className="text-[0.95rem] leading-relaxed text-navy-800">
                   If your email client did not open, your enquiry is still
                   saved — reopen it below, or write to us directly at{" "}
@@ -140,7 +140,7 @@ export function ThankYou() {
                 {nextSteps.map(({ icon: Icon, title, copy }) => (
                   <li
                     key={title}
-                    className="rounded-2xl border border-mist-300 bg-mist-50 p-7"
+                    className="site-card site-card-light p-7"
                   >
                     <Icon className="h-5 w-5 text-accent-600" aria-hidden />
                     <h3 className="mt-4 text-base font-semibold text-navy-950">
@@ -163,7 +163,7 @@ export function ThankYou() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="group flex items-center justify-between gap-4 rounded-2xl border border-mist-300 bg-white px-6 py-4 text-[0.95rem] font-medium text-navy-950 transition-all hover:border-accent-300 hover:shadow-elevate"
+                      className="site-card site-card-white group flex items-center justify-between gap-4 px-6 py-4 text-[0.95rem] font-medium text-navy-950 transition-all hover:border-accent-300 hover:shadow-elevate"
                     >
                       {item.label}
                       <ArrowRight
