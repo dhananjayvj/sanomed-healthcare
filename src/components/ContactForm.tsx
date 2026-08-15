@@ -210,7 +210,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="site-card site-card-white relative p-7 sm:p-9"
+      className="site-card site-card-bright site-card-tight relative p-7 sm:p-9"
     >
       <h3 className="text-xl font-semibold text-navy-950">
         Send us an enquiry

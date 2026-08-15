@@ -6,7 +6,14 @@ import { Reveal } from "./Reveal";
 
 export function Contact() {
   return (
-    <section id="contact" className="relative bg-mist-100 py-24 sm:py-32">
+    <section
+      id="contact"
+      className="relative bg-linear-to-b from-white via-mist-50 to-mist-100 py-24 sm:py-32"
+    >
+      <div
+        className="absolute inset-x-0 top-0 -z-0 h-64 bg-grid-light opacity-60 mask-fade-b"
+        aria-hidden
+      />
       <Container>
         <SectionHeading
           eyebrow="Contact"
@@ -17,7 +24,7 @@ export function Contact() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal className="min-w-0 space-y-4">
-            <div className="site-card site-card-dark p-5 sm:p-8">
+            <div className="site-card site-card-dark site-card-tight p-5 sm:p-8">
               <h3 className="text-lg font-semibold text-white">
                 Talk to us directly
               </h3>
@@ -96,7 +103,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="site-card site-card-white p-6">
+            <div className="site-card site-card-white site-card-tight p-6">
               <p className="text-sm leading-relaxed text-navy-700">
                 For procurement and third-party manufacturing discussions,
                 please include indicative volumes and timelines in your enquiry
