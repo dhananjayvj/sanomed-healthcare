@@ -12,7 +12,7 @@ export function Contact() {
           eyebrow="Contact"
           align="center"
           title="Start a conversation with our team"
-          description="Whether you are scoping a third-party manufacturing engagement or evaluating a specialty chemical supply, we will respond with a considered technical position — not a sales pitch."
+          description="Whether you are scoping a third-party manufacturing engagement or evaluating a specialty chemical supply, we will respond with a considered technical position, not a sales pitch."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
@@ -73,11 +73,18 @@ export function Contact() {
                       Registered Office
                     </p>
                     <address className="mt-1.5 text-[0.95rem] not-italic leading-relaxed text-navy-100/80">
+                      <a
+                        href={company.mapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block underline-offset-4 transition-colors hover:text-accent-300 hover:underline"
+                      >
                       {addressLines.map((line) => (
                         <span key={line} className="block">
                           {line}
                         </span>
                       ))}
+                      </a>
                     </address>
                   </div>
                 </div>
@@ -93,7 +100,7 @@ export function Contact() {
               <p className="text-sm leading-relaxed text-navy-700">
                 For procurement and third-party manufacturing discussions,
                 please include indicative volumes and timelines in your enquiry
-                — it lets us reply with specifics on the first response.
+                so we can reply with specifics on the first response.
               </p>
             </div>
           </Reveal>

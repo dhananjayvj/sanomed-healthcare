@@ -20,6 +20,7 @@ export const company = {
     pincode: "560044",
     country: "India",
   },
+  mapUrl: "https://maps.app.goo.gl/xLSHGeKMUq9PnQnT7",
   emails: {
     primary: "contact@sanomedhealthcare.com",
     secondary: "info@sanomedhealthcare.com",
@@ -60,7 +61,7 @@ export const mission =
 export const coreValues = [
   {
     title: "Integrity",
-    copy: "Ethical conduct in every transaction, filing and clinical claim we make — without exception.",
+    copy: "Ethical conduct in every transaction, filing and clinical claim we make, without exception.",
   },
   {
     title: "Excellence",

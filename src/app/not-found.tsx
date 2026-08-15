@@ -33,7 +33,7 @@ const destinations = [
   {
     href: "/#contact",
     title: "Contact",
-    copy: "Send an enquiry — we respond within two working days.",
+    copy: "Send an enquiry. We respond within two working days.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function NotFound() {
               <p className="mt-6 text-lg leading-relaxed text-navy-700/85">
                 The address may have changed, or the link that brought you here
                 may be out of date. Everything on the site is one step away
-                below — or write to us and we will point you to the right place.
+                below, or write to us and we will point you to the right place.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">

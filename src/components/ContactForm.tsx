@@ -32,17 +32,17 @@ const PHONE_RE = /^[+()\d][\d\s\-()]{6,19}$/;
  * Set NEXT_PUBLIC_FORM_ENDPOINT to a form backend (Formspree, Web3Forms,
  * Getform…) to post enquiries directly from the browser. Until that is
  * configured the form falls back to composing the enquiry as an email in the
- * visitor's own mail client — no submission is silently dropped either way.
+ * visitor's own mail client, so no submission is silently dropped either way.
  */
 const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 
 function buildMailto(values: Values) {
-  const subject = `Website enquiry — ${values.company.trim()} (${values.interest})`;
+  const subject = `Website enquiry - ${values.company.trim()} (${values.interest})`;
   const body = [
     `Name: ${values.name.trim()}`,
     `Organisation: ${values.company.trim()}`,
     `Email: ${values.email.trim()}`,
-    `Phone: ${values.phone.trim() || "—"}`,
+    `Phone: ${values.phone.trim() || "-"}`,
     `Area of interest: ${values.interest}`,
     "",
     "Requirement:",

@@ -28,7 +28,7 @@ export function About() {
                   Incorporated in {company.incorporated} and registered with the
                   Ministry of Corporate Affairs under the Registrar of Companies,
                   Bengaluru, we operate from the KSSIDC Industrial Estate in
-                  Rajajinagar — one of Bangalore&apos;s established industrial
+                  Rajajinagar, one of Bangalore&apos;s established industrial
                   corridors for licensed pharmaceutical, chemical and allied
                   businesses.
                 </>
@@ -38,7 +38,7 @@ export function About() {
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-navy-700/85">
                 We are a private, non-government company limited by shares,
-                operating under NIC code 24290 — the manufacture of chemicals
+                operating under NIC code 24290, the manufacture of chemicals
                 and chemical products. Across{" "}
                 <Link
                   href="/#expertise"
@@ -47,7 +47,7 @@ export function About() {
                   drug development, formulation and supply
                 </Link>
                 , we design, specify and quality-assure every product, then
-                deliver it through trusted contract manufacturing partners — so
+                deliver it through trusted contract manufacturing partners, so
                 every engagement is structured around the same principle that
                 governs our statutory record: precise documentation, verifiable
                 at every step. You can review our{" "}
@@ -74,7 +74,7 @@ export function About() {
               <Quote className="h-7 w-7 text-accent-400" aria-hidden />
               <blockquote className="mt-6 text-xl font-medium leading-snug text-white sm:text-2xl">
                 If it isn&apos;t documented, it didn&apos;t happen. Every batch,
-                every specification, every release — recorded, reviewed and
+                every specification, every release, recorded, reviewed and
                 retrievable.
               </blockquote>
               <figcaption className="mt-7 border-t border-white/10 pt-6 text-sm text-navy-100/60">

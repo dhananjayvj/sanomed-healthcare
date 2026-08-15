@@ -20,7 +20,7 @@ import { company } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Build a rewarding career at Sanomed Health Care — opportunities across research and development, quality assurance, regulatory affairs, supply management, marketing and sales in Bengaluru, India.",
+    "Build a rewarding career at Sanomed Health Care, with opportunities across research and development, quality assurance, regulatory affairs, supply management, marketing and sales in Bengaluru, India.",
 };
 
 const RELATED_LINKS = [
@@ -45,7 +45,7 @@ const reasons = [
   {
     icon: Sparkles,
     title: "Exciting Opportunities",
-    copy: "Roles across research and development, quality assurance, regulatory affairs, supply management, marketing and sales — with room to move between them as you grow.",
+    copy: "Roles across research and development, quality assurance, regulatory affairs, supply management, marketing and sales, with room to move between them as you grow.",
   },
   {
     icon: Lightbulb,
@@ -55,7 +55,7 @@ const reasons = [
   {
     icon: GraduationCap,
     title: "Professional Growth",
-    copy: "Structured training, mentorship and clear career progression frameworks — your development is planned, not left to chance.",
+    copy: "Structured training, mentorship and clear career progression frameworks. Your development is planned, not left to chance.",
   },
   {
     icon: Users,
@@ -82,7 +82,7 @@ const functions = [
 ];
 
 export default function CareersPage() {
-  const subject = encodeURIComponent("Career enquiry — Sanomed Health Care");
+  const subject = encodeURIComponent("Career enquiry - Sanomed Health Care");
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function CareersPage() {
           breadcrumb="Careers"
           eyebrow="Careers"
           title="Unlock your potential with a rewarding career"
-          description="Our success lies in the dedication, expertise and passion of our people. We offer a dynamic, inclusive environment that supports growth, learning and personal development — join us and make a meaningful impact on global healthcare."
+          description="Our success lies in the dedication, expertise and passion of our people. We offer a dynamic, inclusive environment that supports growth, learning and personal development. Join us and make a meaningful impact on global healthcare."
         />
 
         <section className="bg-white py-24 sm:py-32">
@@ -102,7 +102,7 @@ export default function CareersPage() {
               eyebrow="Why Sanomed"
               align="center"
               title="Why choose a career at Sanomed Health Care?"
-              description="Five reasons our team members give when asked why they stay — and why others join."
+              description="Five reasons our team members give when asked why they stay, and why others join."
             />
 
             <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

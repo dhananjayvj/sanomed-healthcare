@@ -14,7 +14,7 @@ const nextSteps = [
   {
     icon: Clock,
     title: "Within two working days",
-    copy: "A member of our team reviews your requirement and replies with a technical position — feasibility, indicative timelines and next questions.",
+    copy: "A member of our team reviews your requirement and replies with a technical position covering feasibility, indicative timelines and next questions.",
   },
   {
     icon: Mail,
@@ -76,7 +76,7 @@ export function ThankYou() {
               <CheckCircle2 className="h-7 w-7" aria-hidden />
             </span>
             <h1 className="mt-7 text-4xl font-semibold leading-[1.1] text-navy-950 sm:text-5xl">
-              Thank you — your enquiry is on its way
+              Thank you. Your enquiry is on its way
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-navy-700/85">
               We appreciate you taking the time to contact {company.shortName}.
@@ -88,7 +88,7 @@ export function ThankYou() {
               <div className="site-card site-card-light mt-8 p-6">
                 <p className="text-[0.95rem] leading-relaxed text-navy-800">
                   If your email client did not open, your enquiry is still
-                  saved — reopen it below, or write to us directly at{" "}
+                  saved. Reopen it below, or write to us directly at{" "}
                   <a
                     href={`mailto:${company.emails.primary}`}
                     className="font-medium text-accent-700 underline-offset-4 hover:underline"

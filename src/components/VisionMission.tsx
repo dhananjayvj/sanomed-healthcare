@@ -40,13 +40,13 @@ export function VisionMission() {
             eyebrow="Core Values"
             align="center"
             title="Five commitments that govern how we decide"
-            description="Our values are not a poster in the lobby — they are the criteria against which operational, scientific and commercial decisions are tested."
+            description="Our values are not a poster in the lobby. They are the criteria against which operational, scientific and commercial decisions are tested."
           />
 
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mx-auto mt-12 grid max-w-7xl gap-5 sm:grid-cols-2 xl:grid-cols-5">
             {coreValues.map((value, index) => (
               <Reveal key={value.title} delay={index * 0.06} as="li">
-                <div className="site-card site-card-light group h-full p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate">
+                <div className="site-card site-card-light group h-full p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:bg-white hover:shadow-elevate">
                   <span
                     className="text-sm font-semibold tabular-nums text-accent-600"
                     aria-hidden

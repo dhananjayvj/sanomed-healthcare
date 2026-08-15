@@ -5,7 +5,7 @@ import { Container, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
 
 /**
- * Home-page teaser only. Therapy-area descriptions live solely on /products —
+ * Home-page teaser only. Therapy-area descriptions live solely on /products.
  * this section lists the coverage and routes there rather than repeating it.
  */
 export function ProductsPreview() {
@@ -16,7 +16,7 @@ export function ProductsPreview() {
           <SectionHeading
             eyebrow="Products"
             title="An extensive and diverse range of medicines"
-            description="Our portfolio spans chronic and acute treatments across six therapy areas — reflecting a commitment to meeting varied healthcare needs under a single, documented quality standard."
+            description="Our portfolio spans chronic and acute treatments across six therapy areas, reflecting a commitment to meeting varied healthcare needs under a single, documented quality standard."
           />
           <Reveal delay={0.1}>
             <Link

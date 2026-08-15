@@ -14,11 +14,11 @@ const siteUrl = "https://www.sanomedhealthcare.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${company.shortName} — ${company.tagline}`,
+    default: `${company.shortName} | ${company.tagline}`,
     template: `%s | ${company.shortName}`,
   },
   description:
-    "We are a Bengaluru-based pharmaceutical and specialty chemical company — drug development, formulation, quality assurance and supply, with production delivered through trusted contract manufacturing partners under documented quality systems.",
+    "We are a Bengaluru-based pharmaceutical and specialty chemical company focused on drug development, formulation, quality assurance and supply, with production delivered through trusted contract manufacturing partners under documented quality systems.",
   keywords: [
     "pharmaceutical company Bangalore",
     "specialty chemical solutions",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: company.shortName,
-    title: `${company.shortName} — ${company.tagline}`,
+    title: `${company.shortName} | ${company.tagline}`,
     description:
       "Revolutionising healthcare through innovation and excellence. Pharmaceutical and specialty chemical development and supply from Bengaluru, India.",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${company.shortName} — ${company.tagline}`,
+    title: `${company.shortName} | ${company.tagline}`,
     description:
       "Drug development, quality assurance and supply management from a registered company in Bengaluru, India.",
     images: ["/images/sanomed-og.png"],

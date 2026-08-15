@@ -80,7 +80,7 @@ export function Hero() {
                 className="order-1 mt-7 max-w-xl text-base leading-relaxed text-navy-700/85 sm:order-none sm:mt-4 sm:text-lg"
               >
                 We are a Bengaluru-based pharmaceutical and specialty chemical
-                company — developing, specifying and quality-assuring products
+                company, developing, specifying and quality-assuring products
                 that are manufactured through trusted contract partners, with
                 full batch traceability and disciplined statutory compliance
                 behind everything we release.
@@ -111,7 +111,7 @@ export function Hero() {
 
             <motion.dl
               {...rise(0.32)}
-              className="mt-11 grid gap-4 border-t border-mist-300 pt-8 sm:grid-cols-3"
+              className="mt-11 grid gap-5 border-t border-mist-300 pt-8 md:grid-cols-3"
             >
               {trustIndicators.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-3">
@@ -119,12 +119,23 @@ export function Hero() {
                     className="mt-0.5 h-5 w-5 shrink-0 text-accent-600"
                     aria-hidden
                   />
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <dt className="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-navy-500">
                       {label}
                     </dt>
-                    <dd className="mt-1 truncate text-sm font-semibold text-navy-950">
-                      {value}
+                    <dd className="mt-1 text-sm font-semibold leading-snug text-navy-950 break-words">
+                      {label === "Operating from" ? (
+                        <a
+                          href={company.mapUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="underline-offset-4 transition-colors hover:text-accent-700 hover:underline"
+                        >
+                          {value}
+                        </a>
+                      ) : (
+                        value
+                      )}
                     </dd>
                   </div>
                 </div>

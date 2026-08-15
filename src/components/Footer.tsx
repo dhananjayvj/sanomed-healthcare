@@ -55,11 +55,18 @@ export function Footer() {
             <div className="mt-5 flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-navy-500" aria-hidden />
               <address className="text-sm not-italic leading-relaxed text-navy-700">
-                {addressLines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
+                <a
+                  href={company.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block underline-offset-4 transition-colors hover:text-accent-700 hover:underline"
+                >
+                  {addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </a>
               </address>
             </div>
 

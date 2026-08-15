@@ -17,13 +17,13 @@ const capabilities = [
   {
     icon: Lightbulb,
     title: "Drug Development",
-    copy: "A comprehensive development path from early-stage research through formulation, stability study and regulatory dossier — targeting safe, effective therapies for unmet medical needs.",
+    copy: "A comprehensive development path from early-stage research through formulation, stability study and regulatory dossier, targeting safe and effective therapies for unmet medical needs.",
     points: ["Early-stage research", "Formulation", "Regulatory dossier"],
   },
   {
     icon: FlaskConical,
     title: "Specialty Chemical Development",
-    copy: "Development of fine and specialty chemicals to customer specification — from gram-scale trial batches through to sustained commercial supply, with production placed with vetted contract partners under controlled process parameters.",
+    copy: "Development of fine and specialty chemicals to customer specification, from gram-scale trial batches through to sustained commercial supply, with production placed with vetted contract partners under controlled process parameters.",
     points: ["Custom specification", "Controlled reactions", "Scale-up support"],
   },
   {
@@ -41,7 +41,7 @@ const capabilities = [
   {
     icon: Workflow,
     title: "Third-Party Manufacturing",
-    copy: "End-to-end management of contract and third-party manufacturing under confidentiality — your specification, your quality standard, delivered through our vetted partner network with our documentation discipline.",
+    copy: "End-to-end management of contract and third-party manufacturing under confidentiality. Your specification and quality standard are delivered through our vetted partner network with our documentation discipline.",
     points: ["Vetted partners", "NDA-backed", "Committed capacity"],
   },
   {
@@ -86,7 +86,7 @@ export function Capabilities() {
           eyebrow="Areas of Expertise"
           align="center"
           title="Six disciplines, one documented standard"
-          description="Development, quality, supply and distribution — delivered through a registered company under a common quality framework and a network of vetted manufacturing partners."
+          description="Development, quality, supply and distribution delivered through a registered company under a common quality framework and a network of vetted manufacturing partners."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -136,7 +136,7 @@ export function Capabilities() {
                 aria-hidden
               />
             </Link>{" "}
-            — and governed by the{" "}
+            and governed by the{" "}
             <Link
               href="/#compliance"
               className="font-medium text-accent-700 underline-offset-4 hover:underline"
@@ -153,7 +153,7 @@ export function Capabilities() {
             eyebrow="How We Work"
             align="center"
             title="How an engagement runs"
-            description="A three-stage path from enquiry to release — each stage gated by documented approval before the next begins."
+            description="A three-stage path from enquiry to release, with each stage gated by documented approval before the next begins."
           />
 
           <ol className="relative mt-14 grid gap-6 md:grid-cols-3">

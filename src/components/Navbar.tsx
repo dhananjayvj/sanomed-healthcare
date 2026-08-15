@@ -40,7 +40,7 @@ export function Navbar() {
         aria-label="Primary"
         className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
       >
-        <Link href="/" className="shrink-0" aria-label="Sanomed Health Care — home">
+        <Link href="/" className="shrink-0" aria-label="Sanomed Health Care home">
           <Wordmark />
         </Link>
 

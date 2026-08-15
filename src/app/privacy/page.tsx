@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           breadcrumb="Privacy Policy"
           eyebrow="Legal"
           title="Privacy Policy"
-          description="This policy explains what information this website collects, why it is collected, and how it is handled. It reflects how the site actually operates — not a generic template."
+          description="This policy explains what information this website collects, why it is collected, and how it is handled. It reflects how the site actually operates, not a generic template."
         />
 
         <section className="bg-white py-20 sm:py-28">

@@ -13,7 +13,7 @@ const pillars = [
   {
     icon: ScrollText,
     title: "Statutory Governance",
-    copy: "Annual filings, board resolutions and registry disclosures are maintained on schedule with the Registrar of Companies, Bengaluru — the same discipline we apply to batch documentation.",
+    copy: "Annual filings, board resolutions and registry disclosures are maintained on schedule with the Registrar of Companies, Bengaluru, with the same discipline we apply to batch documentation.",
     tags: ["MCA filings", "Board process", "Disclosure"],
   },
   {
@@ -53,7 +53,7 @@ export function Compliance() {
           eyebrow="Compliance & Responsibility"
           align="center"
           title="Trust is built on records, not claims"
-          description="Our regulatory, governance and environmental commitments are operational systems with owners and evidence — not statements of intent."
+          description="Our regulatory, governance and environmental commitments are operational systems with owners and evidence, not statements of intent."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -86,7 +86,7 @@ export function Compliance() {
 
         <Reveal delay={0.1}>
           <p className="mt-8 text-center text-[0.95rem] text-navy-700/85">
-            The same discipline governs the information you send us — see our{" "}
+            The same discipline governs the information you send us. See our{" "}
             <Link
               href="/privacy"
               className="font-medium text-accent-700 underline-offset-4 hover:underline"
