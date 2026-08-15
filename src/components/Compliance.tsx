@@ -109,7 +109,7 @@ export function Compliance() {
             <ul className="mt-10 grid gap-4 sm:grid-cols-3">
               {horizons.map(({ icon: Icon, title, copy }, index) => (
                 <Reveal key={title} delay={0.1 + index * 0.08} as="li">
-                  <div className="site-card h-full border-white/10 bg-white/[0.04] p-7">
+                  <div className="site-card site-card-muted site-card-tight h-full p-7">
                     <Icon className="h-5 w-5 text-accent-400" aria-hidden />
                     <h3 className="mt-4 text-base font-semibold text-white">
                       {title}

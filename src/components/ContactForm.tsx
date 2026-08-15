@@ -106,8 +106,8 @@ function validateAll(values: Values): Errors {
 const fieldClass = (invalid: boolean) =>
   cn(
     "w-full rounded-[15px] border-none px-4 py-3 text-[0.95rem] text-navy-950 outline-none transition-all duration-300 ease-in-out placeholder:text-navy-400",
-    "bg-[#cccccc] shadow-[inset_2px_5px_10px_rgba(0,0,0,0.3)]",
-    "focus:bg-white focus:scale-[1.05] focus:shadow-[13px_13px_100px_#969696,-13px_-13px_100px_#ffffff]",
+    "bg-[#eef4f8] shadow-[inset_2px_5px_10px_rgba(110,130,155,0.18)]",
+    "focus:bg-white focus:scale-[1.02] focus:shadow-[10px_10px_40px_rgba(150,166,186,0.2),-10px_-10px_40px_rgba(255,255,255,0.92)]",
     invalid
       ? "text-red-700 placeholder:text-red-400"
       : "",

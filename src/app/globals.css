@@ -205,6 +205,16 @@
     --card-blob: rgb(99 211 177 / 0.18);
   }
 
+  .site-card-muted {
+    --card-shell: rgb(255 255 255 / 0.04);
+    --card-panel: rgb(255 255 255 / 0.045);
+    --card-outline: rgb(255 255 255 / 0.08);
+    --card-blob: rgb(99 211 177 / 0.1);
+    box-shadow:
+      14px 14px 38px rgb(3 7 17 / 0.22),
+      -14px -14px 38px rgb(22 44 82 / 0.12);
+  }
+
   @keyframes blob-bounce {
     0% {
       transform: translate(-100%, -100%) translate3d(0, 0, 0);
