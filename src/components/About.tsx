@@ -29,8 +29,7 @@ export function About() {
                   Ministry of Corporate Affairs under the Registrar of Companies,
                   Bengaluru, we operate from the KSSIDC Industrial Estate in
                   Rajajinagar, one of Bangalore&apos;s established industrial
-                  corridors for licensed pharmaceutical, chemical and allied
-                  businesses.
+                  corridors for pharmaceutical, chemical and allied businesses.
                 </>
               }
             />
@@ -46,11 +45,10 @@ export function About() {
                 >
                   drug development, formulation and supply
                 </Link>
-                , we design, specify and quality-assure every product, then
-                deliver it through trusted contract manufacturing partners, so
-                every engagement is structured around the same principle that
-                governs our statutory record: precise documentation, verifiable
-                at every step. You can review our{" "}
+                , we work to keep things clear, steady and accountable. We
+                shape the specification, oversee quality and work with trusted
+                manufacturing partners so every engagement stays grounded in
+                documentation you can actually rely on. You can review our{" "}
                 <Link
                   href="/products"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"
