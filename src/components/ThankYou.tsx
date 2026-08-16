@@ -4,6 +4,7 @@ import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, Mail } from "lucide-react";
+import { EASE_OUT } from "@/lib/motion";
 import { company } from "@/lib/site";
 import { Container } from "./Section";
 
@@ -67,9 +68,9 @@ export function ThankYou() {
 
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 16, scale: 0.985, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.5, ease: EASE_OUT }}
             className="max-w-3xl"
           >
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-white">

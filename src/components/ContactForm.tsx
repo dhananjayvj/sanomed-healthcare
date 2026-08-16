@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertCircle, Loader2, Send } from "lucide-react";
+import { EASE_OUT } from "@/lib/motion";
 import { company } from "@/lib/site";
 import { ENQUIRY_KEY } from "./ThankYou";
 import { cn } from "@/lib/utils";
@@ -332,9 +333,10 @@ export function ContactForm() {
       <AnimatePresence>
         {status === "error" ? (
           <motion.p
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, y: -6, scale: 0.98, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -6, scale: 0.98, filter: "blur(4px)" }}
+            transition={{ duration: 0.18, ease: EASE_OUT }}
             role="alert"
             className="mt-6 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
           >
@@ -380,10 +382,10 @@ function FieldError({ id, message }: { id: string; message?: string }) {
       {message ? (
         <motion.p
           id={id}
-          initial={{ opacity: 0, y: -4 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.18 }}
+          initial={{ opacity: 0, y: -4, scale: 0.985, filter: "blur(3px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          exit={{ opacity: 0, y: -4, scale: 0.985, filter: "blur(3px)" }}
+          transition={{ duration: 0.16, ease: EASE_OUT }}
           className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-600"
         >
           <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden />

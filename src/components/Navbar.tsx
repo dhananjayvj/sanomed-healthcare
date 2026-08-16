@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
+import { EASE_OUT } from "@/lib/motion";
 import { navLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Wordmark } from "./Logo";
@@ -87,11 +88,17 @@ export function Navbar() {
         {open ? (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, height: 0, y: -10, filter: "blur(6px)" }}
+            animate={{ opacity: 1, height: "auto", y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, height: 0, y: -10, filter: "blur(6px)" }}
+            transition={{
+              height: { duration: 0.24, ease: EASE_OUT },
+              opacity: { duration: 0.18, ease: EASE_OUT },
+              y: { duration: 0.24, ease: EASE_OUT },
+              filter: { duration: 0.18, ease: EASE_OUT },
+            }}
             className="overflow-hidden border-t border-accent-300/60 bg-linear-to-r from-accent-50 via-accent-100 to-accent-200 backdrop-blur-xl lg:hidden"
+            style={{ transformOrigin: "top center" }}
           >
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
               {navLinks.map((link) => (

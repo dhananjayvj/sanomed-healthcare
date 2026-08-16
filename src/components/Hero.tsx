@@ -9,6 +9,7 @@ import {
   FlaskConical,
   MapPin,
 } from "lucide-react";
+import { EASE_OUT } from "@/lib/motion";
 import { company } from "@/lib/site";
 import { Container } from "./Section";
 
@@ -26,9 +27,12 @@ export function Hero() {
   const reduced = useReducedMotion();
 
   const rise = (delay: number) => ({
-    initial: reduced ? false : { opacity: 0, y: 24 },
-    animate: reduced ? undefined : { opacity: 1, y: 0 },
-    transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] as const },
+    initial: reduced ? false : { opacity: 0, y: 20, scale: 0.985, filter: "blur(6px)" },
+    animate:
+      reduced
+        ? undefined
+        : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" },
+    transition: { duration: 0.52, delay, ease: EASE_OUT },
   });
 
   return (
@@ -145,9 +149,17 @@ export function Hero() {
 
           {/* Corporate registry card — the trust artifact */}
           <motion.div
-            initial={reduced ? false : { opacity: 0, y: 32, scale: 0.97 }}
-            animate={reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={
+              reduced
+                ? false
+                : { opacity: 0, y: 28, scale: 0.975, filter: "blur(8px)" }
+            }
+            animate={
+              reduced
+                ? undefined
+                : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+            }
+            transition={{ duration: 0.62, delay: 0.18, ease: EASE_OUT }}
             className="relative"
           >
             <div className="site-card site-card-white p-1.5">

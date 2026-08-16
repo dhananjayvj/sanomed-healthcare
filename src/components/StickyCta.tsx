@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import { springSoft } from "@/lib/motion";
 import { company } from "@/lib/site";
 
 /**
@@ -52,10 +53,10 @@ export function StickyCta() {
     <AnimatePresence>
       {visible ? (
         <motion.div
-          initial={{ y: 90, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 90, opacity: 0 }}
-          transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ y: 90, opacity: 0, scale: 0.98, filter: "blur(6px)" }}
+          animate={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
+          exit={{ y: 90, opacity: 0, scale: 0.98, filter: "blur(6px)" }}
+          transition={springSoft}
           className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-navy-950/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-xl lg:hidden"
         >
           <div className="flex items-center gap-3">
