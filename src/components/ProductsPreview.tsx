@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 import Link from "next/link";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Pill } from "lucide-react";
 import { dosageForms, therapyAreas } from "@/lib/site";
 import { Container, SectionHeading } from "./Section";
@@ -10,8 +14,24 @@ import { Reveal } from "./Reveal";
  * this section lists the coverage and routes there rather than repeating it.
  */
 export function ProductsPreview() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const springImageY = useSpring(imageY, {
+    stiffness: 110,
+    damping: 18,
+    mass: 0.7,
+  });
+
   return (
-    <section id="products" className="relative bg-white py-24 sm:py-32">
+    <section
+      id="products"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-white py-24 sm:py-32"
+    >
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
@@ -34,10 +54,11 @@ export function ProductsPreview() {
         </div>
 
         <Reveal delay={0.08}>
-          <div className="site-card site-card-light mt-12 overflow-hidden">
-            <div className="relative grid gap-8 p-8 sm:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-              <div
-                className="absolute inset-y-0 right-0 hidden w-[44%] overflow-hidden rounded-[2rem] lg:block"
+          <div className="site-card site-card-tight site-card-plain mt-12 overflow-hidden">
+            <div className="relative min-h-[34rem] overflow-hidden rounded-[14px]">
+              <motion.div
+                className="absolute inset-0"
+                style={{ y: springImageY }}
                 aria-hidden
               >
                 <Image
@@ -45,68 +66,85 @@ export function ProductsPreview() {
                   alt=""
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 34vw, 0px"
+                  sizes="100vw"
+                  priority={false}
                 />
-                <div className="absolute inset-0 bg-linear-to-l from-navy-950/24 via-navy-900/18 to-transparent" />
-              </div>
+              </motion.div>
+              <div
+                className="absolute inset-0 bg-linear-to-r from-navy-950/88 via-navy-950/72 to-navy-900/48"
+                aria-hidden
+              />
+              <div
+                className="absolute inset-0 bg-linear-to-t from-navy-950/70 via-transparent to-accent-500/18"
+                aria-hidden
+              />
+              <div
+                className="absolute inset-y-6 left-6 right-6 rounded-[1.2rem] border border-white/14 bg-white/[0.06] backdrop-blur-[6px] lg:right-[46%]"
+                aria-hidden
+              />
 
-              <div className="relative">
-              <div className="flex items-center gap-2.5">
-                <Pill className="h-4.5 w-4.5 text-accent-600" aria-hidden />
-                <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
-                  Therapy Areas
-                </h3>
-              </div>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-navy-700/82">
-                From long-term management therapies to fast-moving acute care,
-                our range is structured to make product conversations clearer
-                and supply decisions easier.
-              </p>
-              <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-                {therapyAreas.map((area) => (
-                  <li
-                    key={area.name}
-                    className="flex items-baseline gap-2.5 text-[0.95rem] font-medium text-navy-900"
-                  >
-                    <span
-                      className="h-1.5 w-1.5 shrink-0 translate-y-[-0.15rem] rounded-full bg-accent-500"
-                      aria-hidden
-                    />
-                    {area.name}
-                  </li>
-                ))}
-              </ul>
-              </div>
+              <div className="relative grid gap-10 p-8 sm:p-10 lg:min-h-[34rem] lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:p-12">
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2.5">
+                      <Pill className="h-4.5 w-4.5 text-accent-300" aria-hidden />
+                      <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/68">
+                        Therapy Areas
+                      </h3>
+                    </div>
+                    <p className="mt-4 max-w-xl text-sm leading-7 text-white/74">
+                      From long-term management therapies to fast-moving acute care,
+                      our range is structured to make product conversations clearer
+                      and supply decisions easier.
+                    </p>
+                    <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                      {therapyAreas.map((area) => (
+                        <li
+                          key={area.name}
+                          className="flex items-baseline gap-2.5 text-[0.95rem] font-medium text-white"
+                        >
+                          <span
+                            className="h-1.5 w-1.5 shrink-0 translate-y-[-0.15rem] rounded-full bg-accent-300"
+                            aria-hidden
+                          />
+                          {area.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div className="relative border-t border-mist-300 pt-8 lg:border-t-0 lg:border-l lg:border-white/40 lg:pt-0 lg:pl-12">
-              <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-500">
-                Dosage Forms
-              </h3>
-              <p className="mt-4 max-w-md text-sm leading-7 text-navy-700/82">
-                We keep the format mix practical, familiar and easy to place
-                into existing treatment and distribution plans.
-              </p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {dosageForms.map((form) => (
-                  <li
-                    key={form}
-                    className="rounded-full border border-mist-300 bg-white/92 px-3.5 py-1.5 text-sm font-medium text-navy-800"
-                  >
-                    {form}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-7 max-w-md text-sm leading-relaxed text-navy-700/85">
-                The{" "}
-                <Link
-                  href="/products"
-                  className="font-medium text-accent-700 underline-offset-4 hover:underline"
-                >
-                  products page
-                </Link>
-                {" "}gives the fuller picture, including the therapy mix and the
-                documentation that travels with each batch.
-              </p>
+                  <p className="mt-8 max-w-lg text-sm leading-relaxed text-white/66">
+                    The{" "}
+                    <Link
+                      href="/products"
+                      className="font-medium text-accent-200 underline-offset-4 hover:text-white hover:underline"
+                    >
+                      products page
+                    </Link>{" "}
+                    gives the fuller picture, including the therapy mix and the
+                    documentation that travels with each batch.
+                  </p>
+                </div>
+
+                <div className="relative self-end rounded-[1.4rem] border border-white/14 bg-white/[0.1] p-6 backdrop-blur-md lg:p-7">
+                  <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/68">
+                    Dosage Forms
+                  </h3>
+                  <p className="mt-4 max-w-md text-sm leading-7 text-white/74">
+                    We keep the format mix practical, familiar and easy to place
+                    into existing treatment and distribution plans.
+                  </p>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {dosageForms.map((form) => (
+                      <li
+                        key={form}
+                        className="rounded-full border border-white/16 bg-white/12 px-3.5 py-1.5 text-sm font-medium text-white"
+                      >
+                        {form}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
