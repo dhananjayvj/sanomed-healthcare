@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-linear-to-b from-white via-mist-50 to-mist-100 py-24 sm:py-32"
+      className="section-space relative bg-linear-to-b from-white via-mist-50 to-mist-100"
     >
       <div
         className="absolute inset-x-0 top-0 -z-0 h-64 bg-grid-light opacity-60 mask-fade-b"
@@ -19,7 +19,7 @@ export function Contact() {
           eyebrow="Contact"
           align="center"
           title="Start a conversation with our team"
-          description="Whether you are scoping a third-party manufacturing engagement or evaluating a specialty chemical supply, we will respond with a considered technical position, not a sales pitch."
+          description="Whether you are scoping a third-party manufacturing engagement or evaluating a specialty chemical supply, we will respond with a considered technical position, not a sales script."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
@@ -104,7 +104,7 @@ export function Contact() {
             </div>
 
             <div className="site-card site-card-white site-card-tight p-6">
-              <p className="text-sm leading-relaxed text-navy-700">
+              <p className="text-sm leading-7 text-navy-700">
                 For procurement and third-party manufacturing discussions,
                 please include indicative volumes and timelines in your enquiry
                 so we can reply with specifics on the first response.

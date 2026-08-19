@@ -11,16 +11,16 @@ import { Reveal } from "./Reveal";
  */
 export function About() {
   return (
-    <section id="about" className="relative bg-mist-50 py-24 sm:py-32">
+    <section id="about" className="section-space relative bg-mist-50">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20">
           <div>
             <SectionHeading
               eyebrow="About Us"
               title={
                 <>
-                  A registered pharmaceutical company built on{" "}
-                  <span className="text-accent-700">documented process</span>
+                  A registered pharmaceutical company built on
+                  <span className="text-accent-700"> documented process</span>
                 </>
               }
               description={
@@ -35,20 +35,21 @@ export function About() {
             />
 
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-navy-700/85">
+              <p className="content-measure mt-8 text-[1.0625rem] leading-7 text-navy-700">
                 We are a private, non-government company limited by shares,
-                operating under NIC code 24290, the manufacture of chemicals
+                operating under NIC code 24290 for the manufacture of chemicals
                 and chemical products. Across{" "}
                 <Link
                   href="/#expertise"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"
                 >
-                  drug development, formulation and supply
+                  product development, quality oversight and supply
                 </Link>
-                , we work to keep things clear, steady and accountable. We
-                shape the specification, oversee quality and work with trusted
+                , we keep the work practical, clear and accountable. We shape
+                the specification, oversee quality and work with trusted
                 manufacturing partners so every engagement stays grounded in
-                documentation you can actually rely on. You can review our{" "}
+                documentation a procurement or compliance team can rely on. You
+                can review our{" "}
                 <Link
                   href="/products"
                   className="font-medium text-accent-700 underline-offset-4 hover:underline"
@@ -70,11 +71,16 @@ export function About() {
           <Reveal delay={0.08}>
             <figure className="site-card site-card-dark overflow-hidden p-9 sm:p-10">
               <Quote className="h-7 w-7 text-accent-400" aria-hidden />
-              <blockquote className="mt-6 text-xl font-medium leading-snug text-white sm:text-2xl">
-                If it isn&apos;t documented, it didn&apos;t happen. Every batch,
-                every specification, every release, recorded, reviewed and
-                retrievable.
+              <blockquote className="mt-6 max-w-[23ch] text-[1.45rem] font-semibold leading-[1.22] text-white sm:text-[1.8rem]">
+                If it is not documented, it has not been controlled. Every
+                batch, every specification, every release, recorded, reviewed
+                and retrievable.
               </blockquote>
+              <p className="mt-5 max-w-[34ch] text-sm leading-7 text-navy-100/75">
+                That approach shapes how we talk to clients too. Less theatre,
+                more clarity on feasibility, timelines, partner fit and release
+                expectations.
+              </p>
               <figcaption className="mt-7 border-t border-white/10 pt-6 text-sm text-navy-100/60">
                 Quality doctrine, {company.shortName}
               </figcaption>

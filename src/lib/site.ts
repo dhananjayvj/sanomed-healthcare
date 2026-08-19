@@ -6,7 +6,7 @@ export const company = {
   legalName: "SANOMED HEALTH CARE PRIVATE LIMITED",
   shortName: "Sanomed Health Care",
   tagline: "Precision Chemical & Healthcare Solutions",
-  promise: "Revolutionising Healthcare through Innovation and Excellence",
+  promise: "Clearer process, steadier quality, more reliable healthcare supply",
   cin: "U24290KA2022PTC159246",
   incorporated: "2022",
   registrar: "ROC Bengaluru",
@@ -30,7 +30,7 @@ export const company = {
     /** E.164 form for tel: links and structured data. */
     href: "+919380330849",
   },
-  hours: "Monday – Saturday · 9:30 AM – 6:30 PM IST",
+  hours: "Monday to Saturday, 9:30 AM to 6:30 PM IST",
 } as const;
 
 export const contactEmails = Object.values(company.emails);

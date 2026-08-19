@@ -14,7 +14,7 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em]",
+        "inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em]",
         tone === "dark" ? "text-accent-700" : "text-accent-300",
         className,
       )}
@@ -56,7 +56,7 @@ export function SectionHeading({
       <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
       <h2
         className={cn(
-          "mt-4 text-3xl font-semibold sm:text-4xl lg:text-[2.6rem] lg:leading-[1.12]",
+          "mt-4 text-[2rem] font-semibold sm:text-[2.35rem] lg:text-[2.85rem] lg:leading-[1.08]",
           tone === "dark" ? "text-navy-950" : "text-white",
         )}
       >
@@ -65,8 +65,8 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "mt-5 max-w-2xl text-[1.0625rem] leading-relaxed",
-            tone === "dark" ? "text-navy-700/85" : "text-navy-100/75",
+            "mt-6 max-w-[65ch] text-base leading-7 sm:text-[1.0625rem]",
+            tone === "dark" ? "text-navy-700" : "text-navy-100/80",
             align === "center" && "mx-auto",
           )}
         >
@@ -85,7 +85,12 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", className)}>
+    <div
+      className={cn(
+        "mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10",
+        className,
+      )}
+    >
       {children}
     </div>
   );

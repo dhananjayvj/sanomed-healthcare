@@ -75,7 +75,7 @@ const process = [
 
 export function Capabilities() {
   return (
-    <section id="expertise" className="relative bg-mist-100 py-24 sm:py-32">
+    <section id="expertise" className="section-space relative bg-mist-100">
       <div
         className="absolute inset-x-0 top-0 -z-0 h-72 bg-grid-light mask-fade-b"
         aria-hidden
@@ -92,7 +92,7 @@ export function Capabilities() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map(({ icon: Icon, title, copy, points }, index) => (
             <Reveal key={title} delay={index * 0.06}>
-              <article className="site-card site-card-white group relative h-full overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-navy-200 hover:shadow-lift">
+              <article className="site-card site-card-light group relative h-full overflow-hidden p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lift">
                 <span
                   className="absolute inset-x-0 top-0 h-0.5 scale-x-0 bg-linear-to-r from-accent-400 to-accent-600 transition-transform duration-500 group-hover:scale-x-100"
                   aria-hidden
@@ -101,10 +101,10 @@ export function Capabilities() {
                   <Icon className="h-5.5 w-5.5" aria-hidden />
                 </span>
 
-                <h3 className="mt-6 text-xl font-semibold text-navy-950">
+                <h3 className="mt-6 text-[1.35rem] font-semibold text-navy-950">
                   {title}
                 </h3>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-navy-700/85">
+                <p className="mt-3 text-[0.98rem] leading-7 text-navy-700">
                   {copy}
                 </p>
 
@@ -112,7 +112,7 @@ export function Capabilities() {
                   {points.map((point) => (
                     <li
                       key={point}
-                      className="rounded-full border border-mist-300 bg-mist-50 px-3 py-1.5 text-xs font-medium text-navy-700"
+                      className="rounded-full border border-mist-300 bg-white/80 px-3 py-1.5 text-xs font-medium text-navy-700"
                     >
                       {point}
                     </li>
@@ -124,7 +124,7 @@ export function Capabilities() {
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mt-10 text-center text-[0.95rem] text-navy-700/85">
+          <p className="mx-auto mt-10 max-w-[65ch] text-center text-[0.98rem] leading-7 text-navy-700">
             These capabilities are applied across our{" "}
             <Link
               href="/products"
@@ -168,14 +168,14 @@ export function Capabilities() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/12 text-accent-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
-                    <span className="text-2xl font-semibold tracking-tight text-mist-300">
+                    <span className="text-2xl font-semibold tracking-tight text-mist-400">
                       {step}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-base font-semibold text-navy-950">
+                  <h3 className="mt-5 text-[1.15rem] font-semibold text-navy-950">
                     {title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-navy-700/85">
+                  <p className="mt-3 text-sm leading-7 text-navy-700">
                     {copy}
                   </p>
                 </div>

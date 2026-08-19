@@ -106,11 +106,11 @@ function validateAll(values: Values): Errors {
 
 const fieldClass = (invalid: boolean) =>
   cn(
-    "w-full rounded-[15px] border-none px-4 py-3 text-[0.95rem] text-navy-950 outline-none transition-all duration-300 ease-in-out placeholder:text-navy-400",
-    "bg-[#eef4f8] shadow-[inset_2px_5px_10px_rgba(110,130,155,0.18)]",
-    "focus:bg-white focus:scale-[1.02] focus:shadow-[10px_10px_40px_rgba(150,166,186,0.2),-10px_-10px_40px_rgba(255,255,255,0.92)]",
+    "w-full rounded-[15px] border border-mist-300 px-4 py-3 text-[0.95rem] text-navy-950 outline-none transition-[background-color,transform,box-shadow,border-color] duration-300 placeholder:text-navy-500",
+    "bg-white/92 shadow-[inset_2px_5px_10px_rgba(110,130,155,0.10)]",
+    "focus:border-accent-500/40 focus:bg-white focus:scale-[1.02] focus:shadow-[10px_10px_40px_rgba(150,166,186,0.16),-10px_-10px_40px_rgba(255,255,255,0.92)]",
     invalid
-      ? "text-red-700 placeholder:text-red-400"
+      ? "border-red-300 text-red-700 placeholder:text-red-400"
       : "",
   );
 
@@ -216,7 +216,7 @@ export function ContactForm() {
       <h3 className="text-xl font-semibold text-navy-950">
         Send us an enquiry
       </h3>
-      <p className="mt-2 text-sm text-navy-700/80">
+      <p className="mt-2 text-sm leading-7 text-navy-700">
         Share your requirement and our team will respond within two working
         days. Fields marked with an asterisk are required.
       </p>

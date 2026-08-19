@@ -30,7 +30,7 @@ export function ProductsPreview() {
     <section
       id="products"
       ref={sectionRef}
-      className="relative overflow-hidden bg-white py-24 sm:py-32"
+      className="section-space relative overflow-hidden bg-white"
     >
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -42,7 +42,7 @@ export function ProductsPreview() {
           <Reveal delay={0.1}>
             <Link
               href="/products"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-navy-200 bg-white px-6 py-3 text-sm font-semibold text-navy-950 transition-all hover:border-accent-400 hover:shadow-elevate"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-navy-200 bg-white px-6 py-3 text-sm font-semibold text-navy-950 transition-[border-color,transform,box-shadow] duration-200 hover:border-accent-400 hover:shadow-elevate active:scale-[0.985]"
             >
               View full portfolio
               <ArrowRight
@@ -71,15 +71,15 @@ export function ProductsPreview() {
                 />
               </motion.div>
               <div
-                className="absolute inset-0 bg-linear-to-r from-navy-950/88 via-navy-950/72 to-navy-900/48"
+                className="absolute inset-0 bg-linear-to-r from-navy-950/92 via-navy-950/76 to-navy-900/52"
                 aria-hidden
               />
               <div
-                className="absolute inset-0 bg-linear-to-t from-navy-950/70 via-transparent to-accent-500/18"
+                className="absolute inset-0 bg-linear-to-t from-navy-950/76 via-transparent to-accent-500/16"
                 aria-hidden
               />
               <div
-                className="absolute inset-y-6 left-6 right-6 rounded-[1.2rem] border border-white/14 bg-white/[0.06] backdrop-blur-[6px] lg:right-[46%]"
+                className="absolute inset-y-6 left-6 right-6 rounded-[1.2rem] border border-white/12 bg-white/[0.05] backdrop-blur-[6px] lg:right-[46%]"
                 aria-hidden
               />
 
@@ -88,11 +88,11 @@ export function ProductsPreview() {
                   <div>
                     <div className="flex items-center gap-2.5">
                       <Pill className="h-4.5 w-4.5 text-accent-300" aria-hidden />
-                      <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/68">
+                      <h3 className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/74">
                         Therapy Areas
                       </h3>
                     </div>
-                    <p className="mt-4 max-w-xl text-sm leading-7 text-white/74">
+                    <p className="mt-4 max-w-[56ch] text-sm leading-7 text-white/82">
                       From long-term management therapies to fast-moving acute care,
                       our range is structured to make product conversations clearer
                       and supply decisions easier.
@@ -113,7 +113,7 @@ export function ProductsPreview() {
                     </ul>
                   </div>
 
-                  <p className="mt-8 max-w-lg text-sm leading-relaxed text-white/66">
+                  <p className="mt-8 max-w-[52ch] text-sm leading-7 text-white/72">
                     The{" "}
                     <Link
                       href="/products"
@@ -126,11 +126,11 @@ export function ProductsPreview() {
                   </p>
                 </div>
 
-                <div className="relative self-end rounded-[1.4rem] border border-white/14 bg-white/[0.1] p-6 backdrop-blur-md lg:p-7">
-                  <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/68">
+                <div className="relative self-end rounded-[1.5rem] border border-white/14 bg-navy-950/32 p-6 backdrop-blur-md lg:p-7">
+                  <h3 className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/74">
                     Dosage Forms
                   </h3>
-                  <p className="mt-4 max-w-md text-sm leading-7 text-white/74">
+                  <p className="mt-4 max-w-[38ch] text-sm leading-7 text-white/82">
                     We keep the format mix practical, familiar and easy to place
                     into existing treatment and distribution plans.
                   </p>
@@ -138,7 +138,7 @@ export function ProductsPreview() {
                     {dosageForms.map((form) => (
                       <li
                         key={form}
-                        className="rounded-full border border-white/16 bg-white/12 px-3.5 py-1.5 text-sm font-medium text-white"
+                        className="rounded-full border border-white/16 bg-white/10 px-3.5 py-1.5 text-sm font-medium text-white"
                       >
                         {form}
                       </li>
