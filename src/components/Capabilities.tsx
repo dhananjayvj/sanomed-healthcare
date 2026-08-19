@@ -75,7 +75,10 @@ const process = [
 
 export function Capabilities() {
   return (
-    <section id="expertise" className="section-space relative bg-mist-100">
+    <section
+      id="expertise"
+      className="section-gradient-cool section-space relative"
+    >
       <div
         className="absolute inset-x-0 top-0 -z-0 h-72 bg-grid-light mask-fade-b"
         aria-hidden

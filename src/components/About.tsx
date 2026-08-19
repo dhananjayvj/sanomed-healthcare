@@ -11,7 +11,7 @@ import { Reveal } from "./Reveal";
  */
 export function About() {
   return (
-    <section id="about" className="section-space relative bg-mist-50">
+    <section id="about" className="section-gradient-soft section-space relative">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20">
           <div>

@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-space relative bg-linear-to-b from-white via-mist-50 to-mist-100"
+      className="section-gradient-soft section-space relative"
     >
       <div
         className="absolute inset-x-0 top-0 -z-0 h-64 bg-grid-light opacity-60 mask-fade-b"
