@@ -38,7 +38,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-linear-to-b from-mist-50 via-white to-mist-100 pt-28 pb-24 sm:pt-40 sm:pb-32"
+      className="relative isolate overflow-hidden bg-linear-to-b from-mist-50 via-white to-mist-100 pt-[6rem] pb-12 sm:pt-40 sm:pb-32"
     >
       <div className="absolute inset-0 -z-10 bg-grid-light mask-fade-b" aria-hidden />
       <div
@@ -51,7 +51,7 @@ export function Hero() {
       />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+        <div className="grid items-center gap-10 sm:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div>
             <motion.div {...rise(0)}>
               <span className="inline-flex items-center gap-2 rounded-full border border-accent-700/15 bg-white/90 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-800 shadow-soft">
@@ -63,14 +63,14 @@ export function Hero() {
             <div className="flex flex-col">
               <motion.h1
                 {...rise(0.08)}
-                className="mt-6 max-w-[12ch] text-[3rem] font-bold leading-[0.98] text-navy-950 sm:mt-7 sm:text-[3.9rem] lg:text-[4.35rem]"
+                className="mt-5 max-w-[12ch] text-[1.95rem] font-bold leading-[1.12] text-navy-950 sm:mt-7 sm:text-[3.9rem] sm:leading-[0.98] lg:text-[4.35rem]"
               >
-                Documented pharmaceutical delivery with clinical-grade discipline
+                Reliable healthcare products backed by disciplined process
               </motion.h1>
 
               <motion.p
                 {...rise(0.14)}
-                className="mt-6 max-w-[58ch] text-lg font-medium leading-8 text-accent-800 sm:text-[1.2rem]"
+                className="mt-4 max-w-[58ch] text-base font-medium leading-7 text-accent-800 sm:mt-6 sm:text-[1.2rem] sm:leading-8"
               >
                 Sanomed Health Care helps healthcare buyers move from requirement
                 to release with clearer specifications, steadier quality control
@@ -79,7 +79,7 @@ export function Hero() {
 
               <motion.p
                 {...rise(0.18)}
-                className="order-1 mt-6 max-w-[62ch] text-base leading-7 text-navy-700 sm:order-none sm:text-[1.0625rem]"
+                className="order-1 mt-4 max-w-[62ch] text-[0.98rem] leading-7 text-navy-700 sm:order-none sm:mt-6 sm:text-[1.0625rem]"
               >
                 We work with pharmaceutical, specialty chemical and healthcare
                 procurement teams that need the practical middle layer done
@@ -90,11 +90,11 @@ export function Hero() {
 
               <motion.div
                 {...rise(0.24)}
-                className="mt-10 flex flex-col gap-4 sm:order-none sm:flex-row sm:items-center"
+                className="mt-8 flex flex-col gap-3 sm:order-none sm:mt-10 sm:flex-row sm:items-center"
               >
                 <Link
                   href="/#contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-navy-950 px-7 py-4 text-sm font-semibold text-white shadow-lift transition-[background-color,transform,box-shadow] duration-200 hover:bg-navy-800 active:scale-[0.98]"
+                  className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-navy-950 px-6 py-3.5 text-sm font-semibold text-white shadow-lift transition-[background-color,transform,box-shadow] duration-200 hover:bg-navy-800 active:scale-[0.98] sm:min-h-0 sm:w-auto sm:px-7 sm:py-4"
                 >
                   Inquire now
                   <ArrowRight
@@ -104,7 +104,7 @@ export function Hero() {
                 </Link>
                 <Link
                   href="/#expertise"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 bg-white/90 px-7 py-4 text-sm font-semibold text-navy-900 transition-[border-color,background-color,transform] duration-200 hover:border-accent-500/40 hover:bg-mist-50 active:scale-[0.985]"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-navy-200 bg-white/90 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-[border-color,background-color,transform] duration-200 hover:border-accent-500/40 hover:bg-mist-50 active:scale-[0.985] sm:min-h-0 sm:w-auto sm:px-7 sm:py-4"
                 >
                   Explore capabilities
                 </Link>
@@ -121,12 +121,12 @@ export function Hero() {
 
             <motion.dl
               {...rise(0.32)}
-              className="mt-12 grid gap-4 border-t border-mist-300 pt-8 md:grid-cols-3"
+              className="mt-8 grid gap-3 border-t border-mist-300 pt-6 sm:mt-12 sm:gap-4 sm:pt-8 md:grid-cols-3"
             >
               {trustIndicators.map(({ icon: Icon, label, value }) => (
                 <div
                   key={label}
-                  className="rounded-[1.5rem] border border-white/80 bg-white/88 p-5 shadow-soft"
+                  className="rounded-[1.25rem] border border-white/80 bg-white/88 p-4 shadow-soft sm:rounded-[1.5rem] sm:p-5"
                 >
                   <div className="flex items-start gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-500/12 text-accent-700">
@@ -169,7 +169,7 @@ export function Hero() {
                 : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
             }
             transition={{ duration: 0.62, delay: 0.18, ease: EASE_OUT }}
-            className="relative"
+            className="relative lg:block"
           >
             <div className="site-card site-card-dark overflow-hidden p-8 sm:p-10">
               <div
