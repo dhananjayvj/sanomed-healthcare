@@ -29,18 +29,19 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300",
-        scrolled
-          ? "border-b border-mist-300/90 bg-white/88 shadow-elevate backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
-      )}
-    >
-      <nav
-        aria-label="Primary"
-        className="mx-auto flex h-18 w-full max-w-[1200px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10"
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300",
+          scrolled || open
+            ? "border-b border-mist-300/90 bg-white/88 shadow-elevate backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent",
+        )}
       >
+        <nav
+          aria-label="Primary"
+          className="mx-auto flex h-[3.75rem] w-full max-w-[1200px] items-center justify-between px-4 py-3 sm:h-18 sm:px-8 sm:py-4 lg:px-10"
+        >
         <Link href="/" className="shrink-0" aria-label="Sanomed Health Care home">
           <Wordmark />
         </Link>
@@ -73,7 +74,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-200 bg-white/80 text-navy-950 transition-[background-color,transform] duration-200 hover:bg-navy-50 active:scale-[0.98] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy-200 bg-white/80 text-navy-950 transition-[background-color,transform] duration-200 hover:bg-navy-50 active:scale-[0.98] lg:hidden"
           >
             {open ? (
               <X className="h-5 w-5" aria-hidden />
@@ -82,50 +83,62 @@ export function Navbar() {
             )}
           </button>
         </div>
-      </nav>
+        </nav>
+      </header>
 
       <AnimatePresence>
         {open ? (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, height: 0, y: -10, filter: "blur(6px)" }}
-            animate={{ opacity: 1, height: "auto", y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, height: 0, y: -10, filter: "blur(6px)" }}
-            transition={{
-              height: { duration: 0.24, ease: EASE_OUT },
-              opacity: { duration: 0.18, ease: EASE_OUT },
-              y: { duration: 0.24, ease: EASE_OUT },
-              filter: { duration: 0.18, ease: EASE_OUT },
-            }}
-            className="overflow-hidden border-t border-mist-300/90 bg-white/92 backdrop-blur-xl lg:hidden"
-            style={{ transformOrigin: "top center" }}
-          >
-            <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+          <>
+            <motion.button
+              type="button"
+              aria-label="Close menu overlay"
+              onClick={() => setOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18, ease: EASE_OUT }}
+              className="fixed inset-0 z-40 bg-navy-950/35 backdrop-blur-[8px] lg:hidden"
+            />
+            <motion.div
+              id="mobile-menu"
+              initial={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+              transition={{
+                opacity: { duration: 0.18, ease: EASE_OUT },
+                y: { duration: 0.24, ease: EASE_OUT },
+                filter: { duration: 0.18, ease: EASE_OUT },
+              }}
+              className="fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-[1.5rem] border border-white/55 bg-white/92 shadow-lift backdrop-blur-xl lg:hidden"
+              style={{ transformOrigin: "top center" }}
+            >
+              <ul className="flex flex-col gap-1 p-3">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-base font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-950"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <li className="pt-2">
                   <Link
-                    href={link.href}
+                    href="/#contact"
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-base font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-950"
+                    className="flex min-h-12 w-full items-center justify-center gap-1.5 rounded-full bg-navy-950 px-5 py-3 text-sm font-semibold text-white"
                   >
-                    {link.label}
+                    Request a Quote
+                    <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                 </li>
-              ))}
-              <li className="pt-2">
-                <Link
-                  href="/#contact"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-center gap-1.5 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-white"
-                >
-                  Request a Quote
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
+              </ul>
+            </motion.div>
+          </>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

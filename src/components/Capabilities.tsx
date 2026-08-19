@@ -89,7 +89,7 @@ export function Capabilities() {
           description="Development, quality, supply and distribution delivered through a registered company under a common quality framework and a network of vetted manufacturing partners."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:mt-14 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {capabilities.map(({ icon: Icon, title, copy, points }, index) => (
             <Reveal key={title} delay={index * 0.06}>
               <article className="site-card site-card-light group relative h-full overflow-hidden p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lift">
@@ -148,7 +148,7 @@ export function Capabilities() {
         </Reveal>
 
         {/* Delivery process */}
-        <div className="mt-24">
+        <div className="mt-16 sm:mt-24">
           <SectionHeading
             eyebrow="How We Work"
             align="center"
@@ -156,7 +156,7 @@ export function Capabilities() {
             description="A three-stage path from enquiry to release, with each stage gated by documented approval before the next begins."
           />
 
-          <ol className="relative mt-14 grid gap-6 md:grid-cols-3">
+          <ol className="relative mt-12 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-6">
             <span
               className="absolute inset-x-12 top-14 hidden h-px bg-linear-to-r from-mist-300 via-accent-300 to-mist-300 md:block"
               aria-hidden

@@ -106,7 +106,7 @@ function validateAll(values: Values): Errors {
 
 const fieldClass = (invalid: boolean) =>
   cn(
-    "w-full rounded-[15px] border border-mist-300 px-4 py-3 text-[0.95rem] text-navy-950 outline-none transition-[background-color,transform,box-shadow,border-color] duration-300 placeholder:text-navy-500",
+    "min-h-12 w-full rounded-[15px] border border-mist-300 px-4 py-3 text-base text-navy-950 outline-none transition-[background-color,transform,box-shadow,border-color] duration-300 placeholder:text-navy-500",
     "bg-white/92 shadow-[inset_2px_5px_10px_rgba(110,130,155,0.10)]",
     "focus:border-accent-500/40 focus:bg-white focus:scale-[1.02] focus:shadow-[10px_10px_40px_rgba(150,166,186,0.16),-10px_-10px_40px_rgba(255,255,255,0.92)]",
     invalid
@@ -350,7 +350,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy-950 px-7 py-3.5 text-sm font-semibold text-white shadow-elevate transition-all hover:bg-navy-800 hover:shadow-lift active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="group mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-navy-950 px-7 py-3.5 text-sm font-semibold text-white shadow-elevate transition-all hover:bg-navy-800 hover:shadow-lift active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "sending" ? (
           <>
